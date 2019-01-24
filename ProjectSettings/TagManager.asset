@@ -1,0 +1,73 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!78 &1
+TagManager:
+  serializedVersion: 2
+  tags:
+  - Enemy
+  - TileCollidable
+  - TileBase
+  - Buildable
+  - Structure
+  - CoreEntity
+  layers:
+  - Default
+  - TransparentFX
+  - Ignore Raycast
+  - 
+  - Water
+  - UI
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  m_SortingLayers:
+  - name: Default
+    uniqueID: 0
+    locked: 0
+  - name: Hidden
+    uniqueID: 101343543
+    locked: 0
+  - name: Ground
+    uniqueID: 1722808433
+    locked: 0
+  - name: CoreEntities
+    uniqueID: 1177503323
+    locked: 0
+  - name: Enemies
+    uniqueID: 4205842469
+    locked: 0
+  - name: Structure
+    uniqueID: 2626221171
+    locked: 0
+  - name: Particles
+    uniqueID: 2324055593
+    locked: 0
+  - name: Indicators
+    uniqueID: 1015259591
+    locked: 0
+  - name: UI
+    uniqueID: 1669938109
+    locked: 0
