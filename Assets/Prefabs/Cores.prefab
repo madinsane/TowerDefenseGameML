@@ -28,7 +28,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4924416658078773321}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -7.676611, y: -0.66141355, z: 0}
+  m_LocalPosition: {x: -5.5, y: -4.49, z: 0}
   m_LocalScale: {x: 2, y: 2, z: 1}
   m_Children:
   - {fileID: 2748824215308306941}
@@ -145,6 +145,7 @@ MonoBehaviour:
   unit:
     prefab: {fileID: 0}
     cost: 0
+    defenseUnit: 0
     isMelee: 1
     damage: 0
     range: 0

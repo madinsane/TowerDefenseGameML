@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class Enemy : AttackEntity
 {
@@ -9,11 +10,17 @@ public class Enemy : AttackEntity
     private float attackCountdown = 0f;
     private bool hasAttacked = false;
 
+    public NavMeshAgent agent;
+    public NavMeshSurface2d navMesh;
+
     new void Start()
     {
         base.Start();
+        agent.updateRotation = false;
+        agent.updateUpAxis = false;
         targetWP = Waypoint.points[0];
         attackCountdown = unit.attackRate;
+        navMesh.BuildNavMesh();
     }
 
     void Update()
@@ -40,8 +47,9 @@ public class Enemy : AttackEntity
         }
         if (!hasAttacked)
         {
-            Vector3 dir = target.position - transform.position;
-            transform.Translate(dir.normalized * unit.speed * Time.deltaTime, Space.World);
+            //Vector3 dir = target.position - transform.position;
+            //transform.Translate(dir.normalized * unit.speed * Time.deltaTime, Space.World);
+            Move();
         } else
         {
             hasAttacked = false;
@@ -64,5 +72,11 @@ public class Enemy : AttackEntity
         StatManager.Gold += unit.value;
         StatManager.Food += unit.value / 5;
         Destroy(gameObject);
+    }
+
+    void Move()
+    {
+        agent.SetDestination(target.transform.position);
+        agent.speed = unit.speed;
     }
 }

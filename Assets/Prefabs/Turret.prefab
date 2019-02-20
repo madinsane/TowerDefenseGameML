@@ -73,6 +73,7 @@ GameObject:
   - component: {fileID: 918270129732911661}
   - component: {fileID: 1071393724961176345}
   - component: {fileID: 5294639636077191150}
+  - component: {fileID: 299927474}
   m_Layer: 0
   m_Name: Turret
   m_TagString: Structure
@@ -160,12 +161,13 @@ MonoBehaviour:
   unit:
     prefab: {fileID: 7798812412441945243}
     cost: 100
+    defenseUnit: 0
     isMelee: 1
     damage: 20
     range: 6
     attackRate: 30
     isSuicide: 0
-    maxHealth: 1000
+    maxHealth: 100
     speed: 0
     value: 50
     healthBar: {fileID: 376233230642799481}
@@ -230,6 +232,22 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!208 &299927474
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7798812412441945243}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.08, y: 0.08, z: 0.1}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0, z: 0}
+  m_TimeToStationary: 0.5
 --- !u!1001 &1134703146650556272
 PrefabInstance:
   m_ObjectHideFlags: 0
