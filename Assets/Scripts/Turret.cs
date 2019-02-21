@@ -20,13 +20,12 @@ public class Turret : AttackEntity
     public ParticleSystem laserEffect;
 
     [Header("Setup")]
-    public string enemyTag = "Enemy";
     public float rotationSpeed = 1.75f;
     public GameObject rangeIndicator;
     public Material rangeMaterial;
 
-    public GameObject bulletPrefab;
-    public Transform firePoint;
+    //public GameObject bulletPrefab;
+    //public Transform firePoint;
     public bool IsSelected { get; set; }
     private bool mouseUpSelect = false;
 
@@ -34,6 +33,7 @@ public class Turret : AttackEntity
     new void Start()
     {
         unit.InitHealth();
+        opponentTag = "Enemy";
         fireCountdown = fireRate;
         if (useLaser)
         {
@@ -47,7 +47,7 @@ public class Turret : AttackEntity
 
     void UpdateTarget()
     {
-        GameObject[] enemies = GameObject.FindGameObjectsWithTag(enemyTag);
+        GameObject[] enemies = GameObject.FindGameObjectsWithTag(opponentTag);
         float shortestDistance = Mathf.Infinity;
         GameObject nearestEnemy = null;
         foreach (GameObject enemy in enemies)
@@ -119,7 +119,7 @@ public class Turret : AttackEntity
 
     void Laser()
     {
-        lineRenderer.SetPosition(0, firePoint.position);
+        lineRenderer.SetPosition(0, unit.firePoint.position);
         lineRenderer.SetPosition(1, target.position);
         if (!lineRenderer.enabled)
         {
@@ -145,15 +145,16 @@ public class Turret : AttackEntity
         transform.rotation = Quaternion.Lerp(transform.rotation, toRotation, Time.deltaTime * rotationSpeed);
     }
 
-    void Shoot()
+    /*void Shoot()
     {
         GameObject projectileNew = Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
         Projectile projectile = projectileNew.GetComponent<Projectile>();
+        projectile.OpponentTag = opponentTag;
         if (projectile != null)
         {
             projectile.Seek(target);
         }
-    }
+    }*/
 
     void DisplayStats()
     {

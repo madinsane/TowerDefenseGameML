@@ -14,6 +14,8 @@ public class Projectile : MonoBehaviour
     //public float explosionRadius = 0f;
     //public GameObject impactEffect;
 
+    public string OpponentTag { get; set; }
+
     public ProjectileData projectileData;
 
     public void Seek (Transform _target)
@@ -46,7 +48,7 @@ public class Projectile : MonoBehaviour
 
     void HitTarget()
     {
-        GameObject effect = (GameObject)Instantiate(projectileData.impactEffect, transform.position, transform.rotation);
+        GameObject effect = Instantiate(projectileData.impactEffect, transform.position, transform.rotation);
         effect.transform.eulerAngles = new Vector3(-90f, 0, 0);
         if (projectileData.explosionRadius > 0f)
         {
@@ -59,10 +61,10 @@ public class Projectile : MonoBehaviour
         Destroy(gameObject);
     }
 
-    void Damage(Transform _enemy)
+    void Damage(Transform _entity)
     {
-        Enemy enemy = _enemy.GetComponent<Enemy>();
-        enemy.Damage(projectileData.damage);
+        Entity entity = _entity.GetComponent<Entity>();
+        entity.Damage(projectileData.damage);
     }
 
     void Explode()
@@ -70,7 +72,7 @@ public class Projectile : MonoBehaviour
         Collider2D[] colliders = Physics2D.OverlapCircleAll(transform.position, projectileData.explosionRadius);
         foreach (Collider2D collider in colliders)
         {
-            if (collider.tag == "Enemy")
+            if (collider.tag == OpponentTag)
             {
                 Damage(collider.transform);
             }

@@ -19,6 +19,11 @@ public class Unit
     public float range = 0.5f;
     public int attackRate = 60;
     public bool isSuicide = false;
+    public float areaOfEffect = 0f;
+
+    [Header("Bullet")]
+    public GameObject bulletPrefab;
+    public Transform firePoint;
 
     [Header("Defense")]
     public float maxHealth = 100;
@@ -30,6 +35,7 @@ public class Unit
     public int value = 50;
     public Image healthBar;
     public float aggroRange = 2f;
+    public GameObject impactEffect;
 
     public void InitHealth()
     {

@@ -162,23 +162,27 @@ MonoBehaviour:
     prefab: {fileID: 7798812412441945243}
     cost: 100
     defenseUnit: 0
-    isMelee: 1
+    isMelee: 0
     damage: 20
     range: 6
     attackRate: 30
     isSuicide: 0
+    areaOfEffect: 0
+    bulletPrefab: {fileID: 3539894598048087453, guid: fe5010a24d6d4764289561d0a2273cb6,
+      type: 3}
+    firePoint: {fileID: 612396808548413382}
     maxHealth: 100
     speed: 0
     value: 50
     healthBar: {fileID: 376233230642799481}
     aggroRange: 6
+  opponentTag: 
   range: 6
   fireRate: 30
   useLaser: 0
   lineRenderer: {fileID: 0}
   laserDamage: 1
   laserEffect: {fileID: 0}
-  enemyTag: Enemy
   rotationSpeed: 1.75
   rangeIndicator: {fileID: 3748275101294720876}
   rangeMaterial: {fileID: 2100000, guid: 2066bcef515c383419d368ac0395d294, type: 2}

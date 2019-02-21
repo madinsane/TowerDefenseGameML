@@ -16,11 +16,12 @@ public class Enemy : AttackEntity
     new void Start()
     {
         base.Start();
+        opponentTag = "Structure";
         agent.updateRotation = false;
         agent.updateUpAxis = false;
         targetWP = Waypoint.points[0];
         attackCountdown = unit.attackRate;
-        navMesh.BuildNavMesh();
+        //navMesh.BuildNavMesh();
     }
 
     void Update()
@@ -30,12 +31,14 @@ public class Enemy : AttackEntity
             return;
         }
         Aggro();
+        agent.isStopped = false;
         if (target == null)
         {
             target = targetWP;
         }
         if (Vector3.SqrMagnitude(transform.position - target.position) <= Mathf.Abs(Mathf.Pow(unit.range,2)))
         {
+            agent.isStopped = true;
             //GetNextWaypoint();
             if (attackCountdown <= 0)
             {

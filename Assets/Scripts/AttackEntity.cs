@@ -5,6 +5,7 @@ using UnityEngine;
 public class AttackEntity : Entity
 {
     protected Transform target;
+    public string opponentTag;
 
     // Start is called before the first frame update
     protected new void Start()
@@ -60,10 +61,56 @@ public class AttackEntity : Entity
     {
         if (target != null)
         {
-            target.gameObject.GetComponent<Entity>().Damage(unit.damage);
+            if (unit.isMelee)
+            {
+                if (unit.areaOfEffect > 0f)
+                {
+                    Explode();
+                } else
+                {
+                    target.gameObject.GetComponent<Entity>().Damage(unit.damage);
+                }
+            } else
+            {
+                Shoot();
+            }
             if (unit.isSuicide)
             {
                 Kill();
+            }
+            GameObject effect = Instantiate(unit.impactEffect, transform.position, transform.rotation);
+            effect.transform.eulerAngles = new Vector3(-90f, 0, 0);
+        }
+    }
+
+    protected void Shoot()
+    {
+        GameObject projectileNew = Instantiate(unit.bulletPrefab, unit.firePoint.position, unit.firePoint.rotation);
+        Projectile projectile = projectileNew.GetComponent<Projectile>();
+        projectile.OpponentTag = opponentTag;
+        if (projectile != null)
+        {
+            projectile.Seek(target);
+        }
+    }
+
+    void Explode()
+    {
+        Collider2D[] colliders = Physics2D.OverlapCircleAll(transform.position, unit.areaOfEffect);
+        foreach (Collider2D collider in colliders)
+        {
+            if (tag == "Enemy")
+            {
+                if (collider.tag == "CoreEntity")
+                {
+                    Entity entity = collider.GetComponent<Entity>();
+                    entity.Damage(unit.damage);
+                }
+            }
+            if (collider.tag == opponentTag)
+            {
+                Entity entity = collider.GetComponent<Entity>();
+                entity.Damage(unit.damage);
             }
         }
     }

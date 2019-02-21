@@ -101,15 +101,22 @@ MonoBehaviour:
     cost: 0
     defenseUnit: 0
     isMelee: 1
-    damage: 10
+    damage: 50
     range: 1.5
     attackRate: 60
-    isSuicide: 0
-    maxHealth: 100
+    isSuicide: 1
+    areaOfEffect: 5
+    bulletPrefab: {fileID: 3539894598048087453, guid: fe5010a24d6d4764289561d0a2273cb6,
+      type: 3}
+    firePoint: {fileID: 7871462881396943206}
+    maxHealth: 1000
     speed: 1
     value: 50
     healthBar: {fileID: 3343549052678709211}
     aggroRange: 2
+    impactEffect: {fileID: 2643392415952849565, guid: 33f5d26be6cfa5f439619bfa6ef1f2c8,
+      type: 3}
+  opponentTag: Structure
   agent: {fileID: 5830846170475127814}
   navMesh: {fileID: 858826815662613914, guid: a1316a3bd8f0808499b27ba8ce093c5a, type: 3}
 --- !u!61 &6438640276895496855
