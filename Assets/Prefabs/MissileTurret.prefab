@@ -127,25 +127,35 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 306378bae6f412a45abf28df4288941e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  structure:
-    prefab: {fileID: 1889151354}
-    cost: 500
-    maxHealth: 2000
+  unit:
+    prefab: {fileID: 0}
+    cost: 0
+    defenseUnit: 0
+    isMelee: 1
+    damage: 10
+    range: 0.5
+    attackRate: 60
+    isSuicide: 0
+    areaOfEffect: 0
+    bulletPrefab: {fileID: 539741492, guid: c1a1d162f8759114896c6cdf9573afa6, type: 3}
+    firePoint: {fileID: 1082406116}
+    maxHealth: 100
+    speed: 10
+    isFlying: 0
     value: 50
     healthBar: {fileID: 6277008510731289196}
-    range: 8
+    aggroRange: 2
+    impactEffect: {fileID: 0}
+  opponentTag: Enemy
   range: 8
   fireRate: 120
   useLaser: 0
   lineRenderer: {fileID: 0}
   laserDamage: 1
   laserEffect: {fileID: 0}
-  enemyTag: Enemy
   rotationSpeed: 1.75
   rangeIndicator: {fileID: 2109560650041383887}
   rangeMaterial: {fileID: 2100000, guid: 2066bcef515c383419d368ac0395d294, type: 2}
-  bulletPrefab: {fileID: 539741492, guid: c1a1d162f8759114896c6cdf9573afa6, type: 3}
-  firePoint: {fileID: 1082406116}
 --- !u!61 &1889151356
 BoxCollider2D:
   m_ObjectHideFlags: 0

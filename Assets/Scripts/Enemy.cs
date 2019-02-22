@@ -19,6 +19,10 @@ public class Enemy : AttackEntity
         opponentTag = "Structure";
         agent.updateRotation = false;
         agent.updateUpAxis = false;
+        if (unit.isFlying == true)
+        {
+            GetComponent<BoxCollider2D>().isTrigger = true;
+        }
         targetWP = Waypoint.points[0];
         attackCountdown = unit.attackRate;
         //navMesh.BuildNavMesh();

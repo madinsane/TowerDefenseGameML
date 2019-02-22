@@ -111,6 +111,7 @@ MonoBehaviour:
     firePoint: {fileID: 7871462881396943206}
     maxHealth: 1000
     speed: 1
+    isFlying: 1
     value: 50
     healthBar: {fileID: 3343549052678709211}
     aggroRange: 2
@@ -174,7 +175,7 @@ NavMeshAgent:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7871462881396943208}
   m_Enabled: 1
-  m_AgentTypeID: 0
+  m_AgentTypeID: -1372625422
   m_Radius: 0.32
   m_Speed: 3.5
   m_Acceleration: 8

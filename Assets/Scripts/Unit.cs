@@ -30,6 +30,7 @@ public class Unit
 
     [Header("Movement")]
     public float speed = 10f;
+    public bool isFlying = false;
 
     [Header("Misc")]
     public int value = 50;
