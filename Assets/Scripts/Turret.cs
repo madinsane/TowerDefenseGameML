@@ -23,6 +23,7 @@ public class Turret : AttackEntity
     public float rotationSpeed = 1.75f;
     public GameObject rangeIndicator;
     public Material rangeMaterial;
+    public GameObject optionCanvasPrefab;
 
     //public GameObject bulletPrefab;
     //public Transform firePoint;
@@ -33,6 +34,7 @@ public class Turret : AttackEntity
     new void Start()
     {
         unit.InitHealth();
+        unit.InitStructure();
         opponentTag = "Enemy";
         fireCountdown = fireRate;
         if (useLaser)
@@ -42,6 +44,7 @@ public class Turret : AttackEntity
         }
         rangeLine = rangeIndicator.DrawCircle(range/2, 0.1f, rangeMaterial);
         rangeLine.enabled = false;
+        optionCanvasPrefab.SetActive(false);
         InvokeRepeating("UpdateTarget", 0f, 0.5f);
     }
 
@@ -74,6 +77,7 @@ public class Turret : AttackEntity
             IsSelected = false;
             mouseUpSelect = false;
             rangeLine.enabled = false;
+            optionCanvasPrefab.SetActive(false);
         }
 
         if (IsSelected)
@@ -83,6 +87,7 @@ public class Turret : AttackEntity
                 IsSelected = false;
                 mouseUpSelect = false;
                 rangeLine.enabled = false;
+                optionCanvasPrefab.SetActive(false);
             }
             else if (Input.GetMouseButtonUp(0))
             {
@@ -161,6 +166,7 @@ public class Turret : AttackEntity
         if (!rangeLine.enabled)
         {
             rangeLine.enabled = true;
+            optionCanvasPrefab.SetActive(true);
         }
     }
 

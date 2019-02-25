@@ -76,8 +76,8 @@ public class Enemy : AttackEntity
 
     public override void Kill()
     {
-        StatManager.Gold += unit.value;
-        StatManager.Food += unit.value / 5;
+        StatManager.Gold += unit.baseValue;
+        StatManager.Food += unit.baseValue / 5;
         Destroy(gameObject);
     }
 

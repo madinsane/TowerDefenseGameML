@@ -527,7 +527,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 588883946, guid: ea0df9023a87ed344902773b71985e4f, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0.000030517578
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1543843472, guid: ea0df9023a87ed344902773b71985e4f, type: 3}
       propertyPath: m_AnchorMax.x
@@ -690,12 +690,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &2122915073 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6160109007096687532, guid: 52da9aef52f17f1489629ebcaeeff4b5,
-    type: 3}
-  m_PrefabInstance: {fileID: 6160109008643170885}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &858826815177490995
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -892,31 +886,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Canvas
       objectReference: {fileID: 0}
-    - target: {fileID: 3329408293415303410, guid: 52da9aef52f17f1489629ebcaeeff4b5,
-        type: 3}
-      propertyPath: shopPrefab
-      value: 
-      objectReference: {fileID: 2122915073}
-    - target: {fileID: 3647929145613859711, guid: 52da9aef52f17f1489629ebcaeeff4b5,
-        type: 3}
-      propertyPath: shopPrefab
-      value: 
-      objectReference: {fileID: 2122915073}
-    - target: {fileID: 3504699203399426998, guid: 52da9aef52f17f1489629ebcaeeff4b5,
-        type: 3}
-      propertyPath: shopPrefab
-      value: 
-      objectReference: {fileID: 2122915073}
-    - target: {fileID: 1744578476973982193, guid: 52da9aef52f17f1489629ebcaeeff4b5,
-        type: 3}
-      propertyPath: shopPrefab
-      value: 
-      objectReference: {fileID: 2122915073}
-    - target: {fileID: 48376300349321029, guid: 52da9aef52f17f1489629ebcaeeff4b5,
-        type: 3}
-      propertyPath: shopPrefab
-      value: 
-      objectReference: {fileID: 2122915073}
     - target: {fileID: 5751289767224190087, guid: 52da9aef52f17f1489629ebcaeeff4b5,
         type: 3}
       propertyPath: m_AnchorMin.y
@@ -1102,39 +1071,39 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 6160109007778186886, guid: 52da9aef52f17f1489629ebcaeeff4b5,
-        type: 3}
+    - target: {fileID: 1642389136, guid: 52da9aef52f17f1489629ebcaeeff4b5, type: 3}
       propertyPath: m_AnchorMin.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 6160109007778186886, guid: 52da9aef52f17f1489629ebcaeeff4b5,
-        type: 3}
+    - target: {fileID: 1642389136, guid: 52da9aef52f17f1489629ebcaeeff4b5, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 6160109007778186886, guid: 52da9aef52f17f1489629ebcaeeff4b5,
-        type: 3}
+    - target: {fileID: 1642389136, guid: 52da9aef52f17f1489629ebcaeeff4b5, type: 3}
       propertyPath: m_AnchoredPosition.x
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 6160109007778186886, guid: 52da9aef52f17f1489629ebcaeeff4b5,
-        type: 3}
+    - target: {fileID: 1642389136, guid: 52da9aef52f17f1489629ebcaeeff4b5, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1642389136, guid: 52da9aef52f17f1489629ebcaeeff4b5, type: 3}
+    - target: {fileID: 3928981104093215239, guid: 52da9aef52f17f1489629ebcaeeff4b5,
+        type: 3}
       propertyPath: m_AnchorMin.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1642389136, guid: 52da9aef52f17f1489629ebcaeeff4b5, type: 3}
+    - target: {fileID: 3928981104093215239, guid: 52da9aef52f17f1489629ebcaeeff4b5,
+        type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1642389136, guid: 52da9aef52f17f1489629ebcaeeff4b5, type: 3}
+    - target: {fileID: 3928981104093215239, guid: 52da9aef52f17f1489629ebcaeeff4b5,
+        type: 3}
       propertyPath: m_AnchoredPosition.x
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1642389136, guid: 52da9aef52f17f1489629ebcaeeff4b5, type: 3}
+    - target: {fileID: 3928981104093215239, guid: 52da9aef52f17f1489629ebcaeeff4b5,
+        type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
@@ -1211,6 +1180,57 @@ PrefabInstance:
       propertyPath: placementPrefab
       value: 
       objectReference: {fileID: 1273972891}
+    - target: {fileID: 646049809, guid: 472845f585d35674988f56d98ef79969, type: 3}
+      propertyPath: baseTurret.prefab
+      value: 
+      objectReference: {fileID: 7798812412441945243, guid: 28af48c4e4c83e34a92d86756b4cabe4,
+        type: 3}
+    - target: {fileID: 646049809, guid: 472845f585d35674988f56d98ef79969, type: 3}
+      propertyPath: baseTurret.cost
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 646049809, guid: 472845f585d35674988f56d98ef79969, type: 3}
+      propertyPath: baseTurret.defenseUnit
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 646049809, guid: 472845f585d35674988f56d98ef79969, type: 3}
+      propertyPath: baseTurret.range
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 646049809, guid: 472845f585d35674988f56d98ef79969, type: 3}
+      propertyPath: missileTurret.prefab
+      value: 
+      objectReference: {fileID: 1889151354, guid: af0185c4be902114faa5115ec5329cac,
+        type: 3}
+    - target: {fileID: 646049809, guid: 472845f585d35674988f56d98ef79969, type: 3}
+      propertyPath: missileTurret.cost
+      value: 250
+      objectReference: {fileID: 0}
+    - target: {fileID: 646049809, guid: 472845f585d35674988f56d98ef79969, type: 3}
+      propertyPath: missileTurret.defenseUnit
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 646049809, guid: 472845f585d35674988f56d98ef79969, type: 3}
+      propertyPath: missileTurret.range
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 646049809, guid: 472845f585d35674988f56d98ef79969, type: 3}
+      propertyPath: laserTurret.prefab
+      value: 
+      objectReference: {fileID: 817551037, guid: a3949a7914892ff4ab290ae34574629a,
+        type: 3}
+    - target: {fileID: 646049809, guid: 472845f585d35674988f56d98ef79969, type: 3}
+      propertyPath: laserTurret.cost
+      value: 200
+      objectReference: {fileID: 0}
+    - target: {fileID: 646049809, guid: 472845f585d35674988f56d98ef79969, type: 3}
+      propertyPath: laserTurret.defenseUnit
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 646049809, guid: 472845f585d35674988f56d98ef79969, type: 3}
+      propertyPath: laserTurret.range
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 6279557666307883431, guid: 472845f585d35674988f56d98ef79969,
         type: 3}
       propertyPath: spawnPoint

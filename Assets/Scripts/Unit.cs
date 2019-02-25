@@ -7,11 +7,8 @@ using UnityEngine.UI;
 public class Unit
 {
     public float Health { get; set; }
-
-    [Header("Shop")]
-    public GameObject prefab;
-    public int cost;
-    public int defenseUnit;
+    public int UpgradeLevel { get; set; }
+    public int Value { get; set; }
 
     [Header("Offense")]
     public bool isMelee = true;
@@ -32,8 +29,11 @@ public class Unit
     public float speed = 10f;
     public bool isFlying = false;
 
+    [Header("Structure")]
+    
+
     [Header("Misc")]
-    public int value = 50;
+    public int baseValue = 50;
     public Image healthBar;
     public float aggroRange = 2f;
     public GameObject impactEffect;
@@ -41,5 +41,11 @@ public class Unit
     public void InitHealth()
     {
         Health = maxHealth;
+    }
+
+    public void InitStructure()
+    {
+        Value = baseValue;
+        UpgradeLevel = 0;
     }
 }

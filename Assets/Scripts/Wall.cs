@@ -8,7 +8,7 @@ public class Wall : Entity
     // Start is called before the first frame update
     new void Start()
     {
-        wall.InitHealth();
+        //wall.InitHealth();
         Waypoint.points.Add(transform);
     }
 

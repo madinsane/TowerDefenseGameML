@@ -3,13 +3,11 @@
 public class Shop : MonoBehaviour
 {
     BuildManager buildManager;
-    public Structure baseTurret;
-    public Structure missileTurret;
-    public Structure laserTurret;
 
-    private void Start()
+    private void Awake()
     {
         buildManager = BuildManager.instance;
+        Debug.Log("Shop started");
     }
 
     public void SelectStructure(string name)
@@ -19,17 +17,17 @@ public class Shop : MonoBehaviour
             case "Turret":
                 Debug.Log("Turret selected");
                 buildManager.CurrentTurret = name;
-                buildManager.SetTurretToBuild(baseTurret);
+                buildManager.SetTurretToBuild(buildManager.baseTurret);
                 break;
             case "MissileTurret":
                 Debug.Log("Missile Turret selected");
                 buildManager.CurrentTurret = name;
-                buildManager.SetTurretToBuild(missileTurret);
+                buildManager.SetTurretToBuild(buildManager.missileTurret);
                 break;
             case "LaserTurret":
-                Debug.Log("Missile Turret selected");
+                Debug.Log("Laser Turret selected");
                 buildManager.CurrentTurret = name;
-                buildManager.SetTurretToBuild(laserTurret);
+                buildManager.SetTurretToBuild(buildManager.laserTurret);
                 break;
             default:
                 Debug.Log("Structure not found");
@@ -44,13 +42,13 @@ public class Shop : MonoBehaviour
         switch (name)
         {
             case "Turret":
-                cost = baseTurret.cost;
+                cost = buildManager.baseTurret.cost;
                 break;
             case "MissileTurret":
-                cost = missileTurret.cost;
+                cost = buildManager.missileTurret.cost;
                 break;
             case "LaserTurret":
-                cost = laserTurret.cost;
+                cost = buildManager.laserTurret.cost;
                 break;
             default:
                 Debug.Log("Structure not found");
@@ -65,18 +63,38 @@ public class Shop : MonoBehaviour
         switch (name)
         {
             case "Turret":
-                duCost = baseTurret.defenseUnit;
+                duCost = buildManager.baseTurret.defenseUnit;
                 break;
             case "MissileTurret":
-                duCost = missileTurret.defenseUnit;
+                duCost = buildManager.missileTurret.defenseUnit;
                 break;
             case "LaserTurret":
-                duCost = laserTurret.defenseUnit;
+                duCost = buildManager.laserTurret.defenseUnit;
                 break;
             default:
                 Debug.Log("Structure not found");
                 break;
         }
         return duCost;
+    }
+
+    public int GetStructureUpgradeCost(Unit structure)
+    {
+        int cost = Mathf.FloorToInt(structure.Value * 1.5f);
+        //structure.Value = cost + structure.Value;
+        return cost;
+    }
+
+    public int GetStructureRepairCost(Unit structure)
+    {
+        float lifePercent = (structure.maxHealth - structure.Health) / structure.maxHealth;
+        int cost = Mathf.FloorToInt(structure.Value * lifePercent * 0.5f);
+        //structure.Value = cost + structure.Value;
+        return cost;
+    }
+
+    public int GetStructureSellAmount(Unit structure)
+    {
+        return structure.Value;
     }
 }

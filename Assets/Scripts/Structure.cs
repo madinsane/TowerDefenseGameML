@@ -11,18 +11,18 @@ public class Structure
     public int cost;
     public int defenseUnit;
 
-    public float Health { get; set; }
+    //public float Health { get; set; }
 
-    [Header("Defense")]
-    public float maxHealth;
+    //[Header("Defense")]
+    //public float maxHealth;
 
     [Header("Misc")]
-    public int value = 50;
-    public Image healthBar;
+    //public int value = 50;
+    //public Image healthBar;
     public float range = 5f;
 
-    public void InitHealth()
-    {
-        Health = maxHealth;
-    }
+    //public void InitHealth()
+    //{
+    //    Health = maxHealth;
+    //}
 }

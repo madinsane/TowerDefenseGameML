@@ -117,7 +117,7 @@ public class AttackEntity : Entity
 
     public override void Kill()
     {
-        StatManager.Gold += unit.value;
+        StatManager.Gold += unit.baseValue;
         Destroy(gameObject);
     }
 }

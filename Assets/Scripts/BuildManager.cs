@@ -10,6 +10,10 @@ public class BuildManager : MonoBehaviour
     private SpriteRenderer spriteRenderer;
     public GameObject placementPrefab;
 
+    public Structure baseTurret;
+    public Structure missileTurret;
+    public Structure laserTurret;
+
     public bool IsPlacing { get; set; }
     public string CurrentTurret { get; set; }
     public bool CanBuild { get { return turretToBuild != null; } }
