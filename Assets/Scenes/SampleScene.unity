@@ -193,6 +193,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: NavMeshManagerFlying
       objectReference: {fileID: 0}
+    - target: {fileID: 858826815662613915, guid: a1316a3bd8f0808499b27ba8ce093c5a,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 858826815662613913, guid: a1316a3bd8f0808499b27ba8ce093c5a,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -527,7 +532,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 588883946, guid: ea0df9023a87ed344902773b71985e4f, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0
+      value: -0.000015258789
       objectReference: {fileID: 0}
     - target: {fileID: 1543843472, guid: ea0df9023a87ed344902773b71985e4f, type: 3}
       propertyPath: m_AnchorMax.x
@@ -609,6 +614,10 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1772617123, guid: 45d09f2cf85a8254fb0a3f50a9d18043, type: 3}
+      propertyPath: unit.maxHealth
+      value: 10000
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 45d09f2cf85a8254fb0a3f50a9d18043, type: 3}
@@ -1106,6 +1115,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1828114214274397951, guid: 52da9aef52f17f1489629ebcaeeff4b5,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -21.699951
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 52da9aef52f17f1489629ebcaeeff4b5, type: 3}

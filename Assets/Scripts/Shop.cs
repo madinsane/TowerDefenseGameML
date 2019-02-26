@@ -7,7 +7,6 @@ public class Shop : MonoBehaviour
     private void Awake()
     {
         buildManager = BuildManager.instance;
-        Debug.Log("Shop started");
     }
 
     public void SelectStructure(string name)
@@ -80,6 +79,10 @@ public class Shop : MonoBehaviour
 
     public int GetStructureUpgradeCost(Unit structure)
     {
+        if (structure.UpgradeLevel >= 5)
+        {
+            return -1;
+        }
         int cost = Mathf.FloorToInt(structure.Value * 1.5f);
         //structure.Value = cost + structure.Value;
         return cost;
@@ -88,13 +91,55 @@ public class Shop : MonoBehaviour
     public int GetStructureRepairCost(Unit structure)
     {
         float lifePercent = (structure.maxHealth - structure.Health) / structure.maxHealth;
-        int cost = Mathf.FloorToInt(structure.Value * lifePercent * 0.5f);
+        int cost = Mathf.FloorToInt(structure.Value * lifePercent);
         //structure.Value = cost + structure.Value;
         return cost;
     }
 
     public int GetStructureSellAmount(Unit structure)
     {
-        return structure.Value;
+        float lifePercent = (structure.maxHealth - structure.Health) / structure.maxHealth;
+        int cost = Mathf.FloorToInt(structure.Value * (1-lifePercent));
+        return cost;
+    }
+
+    public void RepairStructure(Entity structure)
+    {
+        int cost = GetStructureRepairCost(structure.unit);
+        if (StatManager.Gold >= cost)
+        {
+            structure.unit.InitHealth();
+            StatManager.Gold -= cost;
+        } else
+        {
+            Debug.Log("Insufficient Gold");
+        }
+    }
+
+    public void UpgradeStructure(Entity structure)
+    {
+        int cost = GetStructureUpgradeCost(structure.unit);
+        if (StatManager.Gold >= cost)
+        {
+            if (structure.unit.UpgradeLevel < 5)
+            {
+                structure.unit.UpgradeStructure();
+                StatManager.Gold -= cost;
+            } else
+            {
+                Debug.Log("Already at max level");
+            }
+        }
+        else
+        {
+            Debug.Log("Insufficient Gold");
+        }
+    }
+
+    public void SellStructure(Entity structure)
+    {
+        int cost = GetStructureRepairCost(structure.unit);
+        StatManager.Gold += cost;
+        structure.Kill();
     }
 }

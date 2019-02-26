@@ -23,7 +23,7 @@ public class OptionCostUI : MonoBehaviour
     {
         shop = shopPrefab.GetComponent<Shop>();
         unit = structurePrefab.GetComponent<Turret>().unit;
-        InvokeRepeating("UpdateCost", 0f, 0.5f);
+        InvokeRepeating("UpdateCost", 0f, 0.25f);
     }
 
     void UpdateCost()
@@ -32,6 +32,11 @@ public class OptionCostUI : MonoBehaviour
         {
             case OptionType.Upgrade:
                 cost = shop.GetStructureUpgradeCost(unit);
+                if (cost == -1)
+                {
+                    costText.text = "MAX";
+                    return;
+                }
                 break;
             case OptionType.Repair:
                 cost = shop.GetStructureRepairCost(unit);

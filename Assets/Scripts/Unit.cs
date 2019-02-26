@@ -30,22 +30,54 @@ public class Unit
     public bool isFlying = false;
 
     [Header("Structure")]
-    
+    public float damageUpFactor = 0.25f;
+    public float healthUpFactor = 0.50f;
+    public float attackRateUpFactor = 0.1f;
+    public float valueFactor = 0.5f;
 
     [Header("Misc")]
     public int baseValue = 50;
     public Image healthBar;
+    public HorizontalLayoutGroup upgradeIcons;
     public float aggroRange = 2f;
     public GameObject impactEffect;
 
     public void InitHealth()
     {
         Health = maxHealth;
+        healthBar.fillAmount = (Health / maxHealth);
     }
 
     public void InitStructure()
     {
         Value = baseValue;
         UpgradeLevel = 0;
+        UpdateUpgradeIcons();
+    }
+
+    public void UpgradeStructure()
+    {
+        UpgradeLevel++;
+        damage *= (1 + damageUpFactor);
+        maxHealth *= (1 + healthUpFactor);
+        attackRate = Mathf.FloorToInt(attackRate * (1 - attackRateUpFactor));
+        Value = Mathf.FloorToInt(Value * (1 + valueFactor));
+        InitHealth();
+        UpdateUpgradeIcons();
+    }
+
+    private void UpdateUpgradeIcons()
+    {
+        Image[] icons = upgradeIcons.GetComponentsInChildren<Image>();
+        for (int i = 0; i < icons.Length; i++)
+        {
+            if (i < UpgradeLevel)
+            {
+                icons[i].enabled = true;
+            } else
+            {
+                icons[i].enabled = false;
+            }
+        }
     }
 }

@@ -10,7 +10,6 @@ public class Turret : AttackEntity
 
     [Header("Bullet Attributes")]
     public float range = 5f;
-    public int fireRate = 60;
     private int fireCountdown = 0;
 
     [Header("Laser Attributes")]
@@ -29,6 +28,8 @@ public class Turret : AttackEntity
     //public Transform firePoint;
     public bool IsSelected { get; set; }
     private bool mouseUpSelect = false;
+    private bool uiDelay = false;
+    private int uiDelayCounter = 0;
 
     // Start is called before the first frame update
     new void Start()
@@ -36,7 +37,7 @@ public class Turret : AttackEntity
         unit.InitHealth();
         unit.InitStructure();
         opponentTag = "Enemy";
-        fireCountdown = fireRate;
+        fireCountdown = unit.attackRate;
         if (useLaser)
         {
             lineRenderer.enabled = false;
@@ -72,13 +73,24 @@ public class Turret : AttackEntity
     // Update is called once per frame
     void Update()
     {
+        if (uiDelay)
+        {
+            uiDelayCounter--;
+        }
+        if (uiDelayCounter <= 0 && uiDelay)
+        {
+            optionCanvasPrefab.SetActive(false);
+            uiDelay = false;
+        }
         if (mouseUpSelect && IsSelected && Input.GetMouseButtonDown(0))
         {
             IsSelected = false;
             mouseUpSelect = false;
             rangeLine.enabled = false;
-            optionCanvasPrefab.SetActive(false);
+            uiDelay = true;
+            uiDelayCounter = 10;
         }
+
 
         if (IsSelected)
         {
@@ -107,8 +119,6 @@ public class Turret : AttackEntity
             }
             return;
         }
-        
-
         LockOn();
         if (useLaser)
         {
@@ -117,9 +127,9 @@ public class Turret : AttackEntity
         else if (fireCountdown <= 0)
         {
             Shoot();
-            fireCountdown = fireRate;
+            fireCountdown = unit.attackRate;
         }
-        fireCountdown -= 1;
+        fireCountdown--;
     }
 
     void Laser()
