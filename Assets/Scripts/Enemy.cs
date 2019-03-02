@@ -9,6 +9,7 @@ public class Enemy : AttackEntity
     private int wavepointIndex = 0;
     private float attackCountdown = 0f;
     private bool hasAttacked = false;
+    public Transform TauntTarget { get; set; }
 
     public NavMeshAgent agent;
     public NavMeshSurface2d navMesh;
@@ -23,6 +24,7 @@ public class Enemy : AttackEntity
         {
             GetComponent<BoxCollider2D>().isTrigger = true;
         }
+        TauntTarget = null;
         PickCore();
         attackCountdown = unit.attackRate;
         //navMesh.BuildNavMesh();
@@ -41,7 +43,13 @@ public class Enemy : AttackEntity
         {
             return;
         }
-        Aggro();
+        if (TauntTarget == null)
+        {
+            Aggro();
+        } else
+        {
+            target = TauntTarget;
+        }
         agent.isStopped = false;
         if (target == null)
         {

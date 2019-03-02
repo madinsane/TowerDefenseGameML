@@ -97,9 +97,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   unit:
-    prefab: {fileID: 0}
-    cost: 0
-    defenseUnit: 0
     isMelee: 1
     damage: 50
     range: 1.5
@@ -111,9 +108,15 @@ MonoBehaviour:
     firePoint: {fileID: 7871462881396943206}
     maxHealth: 1000
     speed: 1
-    isFlying: 1
-    value: 50
+    isFlying: 0
+    damageUpFactor: 0.25
+    healthUpFactor: 0.5
+    attackRateUpFactor: 0.1
+    valueFactor: 0.5
+    defenseUnit: 0
+    baseValue: 50
     healthBar: {fileID: 3343549052678709211}
+    upgradeIcons: {fileID: 0}
     aggroRange: 2
     impactEffect: {fileID: 2643392415952849565, guid: 33f5d26be6cfa5f439619bfa6ef1f2c8,
       type: 3}
@@ -175,7 +178,7 @@ NavMeshAgent:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7871462881396943208}
   m_Enabled: 1
-  m_AgentTypeID: -1372625422
+  m_AgentTypeID: 0
   m_Radius: 0.32
   m_Speed: 3.5
   m_Acceleration: 8

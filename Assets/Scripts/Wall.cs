@@ -8,8 +8,8 @@ public class Wall : Entity
     // Start is called before the first frame update
     new void Start()
     {
-        //wall.InitHealth();
-        Waypoint.points.Add(transform);
+        base.Start();
+        InvokeRepeating("Taunt", 0f, 0.5f);
     }
 
     // Update is called once per frame
@@ -18,9 +18,21 @@ public class Wall : Entity
         
     }
 
+    void Taunt()
+    {
+        GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
+        foreach (GameObject enemy in enemies)
+        {
+            float distanceToEnemy = Vector3.Distance(transform.position, enemy.transform.position);
+            if (distanceToEnemy <= unit.range)
+            {
+                enemy.GetComponent<Enemy>().TauntTarget = gameObject.transform;                
+            }
+        }
+    }
+
     new void Kill()
     {
-        Waypoint.points.Remove(transform);
         //StatManager.Gold += wall.value;
         Destroy(gameObject);
     }
