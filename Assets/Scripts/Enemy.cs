@@ -23,9 +23,16 @@ public class Enemy : AttackEntity
         {
             GetComponent<BoxCollider2D>().isTrigger = true;
         }
-        targetWP = Waypoint.points[0];
+        PickCore();
         attackCountdown = unit.attackRate;
         //navMesh.BuildNavMesh();
+    }
+
+    void PickCore()
+    {
+        System.Random random = new System.Random();
+        int core = random.Next(0, Waypoint.points.Count);
+        targetWP = Waypoint.points[core];
     }
 
     void Update()
