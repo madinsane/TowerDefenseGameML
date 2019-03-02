@@ -34,6 +34,7 @@ public class Unit
     public float healthUpFactor = 0.50f;
     public float attackRateUpFactor = 0.1f;
     public float valueFactor = 0.5f;
+    public int defenseUnit = 0;
 
     [Header("Misc")]
     public int baseValue = 50;

@@ -8,11 +8,17 @@ public class BuildManager : MonoBehaviour
 
     private Structure turretToBuild;
     private SpriteRenderer spriteRenderer;
+    [Header("Setup")]
     public GameObject placementPrefab;
+    public Transform spawnPoint;
 
+    [Header("Structures")]
     public Structure baseTurret;
     public Structure missileTurret;
     public Structure laserTurret;
+
+    [Header("Units")]
+    public Summon baseUnit;
 
     public bool IsPlacing { get; set; }
     public string CurrentTurret { get; set; }
@@ -64,6 +70,17 @@ public class BuildManager : MonoBehaviour
             DisablePreview();
             Instantiate(turretToBuild.prefab, position, Quaternion.identity);
         }
+    }
+
+    public void SummonUnit(Summon unit)
+    {
+        if (StatManager.Food < unit.cost)
+        {
+            Debug.Log("Not enough food");
+            return;
+        }
+        StatManager.Food -= unit.cost;
+        Instantiate(unit.prefab, spawnPoint.position, Quaternion.identity);
     }
 
     public void ColorPreview(bool canBuild)

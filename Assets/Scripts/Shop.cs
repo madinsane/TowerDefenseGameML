@@ -9,6 +9,11 @@ public class Shop : MonoBehaviour
         buildManager = BuildManager.instance;
     }
 
+    private void Start()
+    {
+        buildManager = BuildManager.instance;
+    }
+
     public void SelectStructure(string name)
     {
         switch (name)
@@ -141,5 +146,35 @@ public class Shop : MonoBehaviour
         int cost = GetStructureRepairCost(structure.unit);
         StatManager.Gold += cost;
         structure.Kill();
+    }
+
+    public int GetUnitCost(string name)
+    {
+        int cost = 0;
+        switch (name)
+        {
+            case "Enemy":
+                cost = buildManager.baseUnit.cost;
+                break;
+            default:
+                Debug.Log("Unit not found");
+                break;
+        }
+        return cost;
+    }
+
+    public void SelectSummon(string name)
+    {
+        switch (name)
+        {
+            case "Enemy":
+                Debug.Log("Enemy selected");
+                buildManager.SummonUnit(buildManager.baseUnit);
+                break;
+            default:
+                Debug.Log("Unit not found");
+                break;
+        }
+
     }
 }
