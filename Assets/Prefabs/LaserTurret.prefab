@@ -103,7 +103,7 @@ MonoBehaviour:
   unit:
     isMelee: 1
     damage: 10
-    range: 0.5
+    range: 8
     attackRate: 60
     isSuicide: 0
     areaOfEffect: 0
@@ -116,21 +116,22 @@ MonoBehaviour:
     healthUpFactor: 0.5
     attackRateUpFactor: 0.1
     valueFactor: 0.5
+    defenseUnit: 0
     baseValue: 50
     healthBar: {fileID: 274836471737331329}
     upgradeIcons: {fileID: 4173610385696425744}
     aggroRange: 2
     impactEffect: {fileID: 0}
   opponentTag: Enemy
+  rangeIndicator: {fileID: 7684949521634504838}
+  rangeMaterial: {fileID: 2100000, guid: 2066bcef515c383419d368ac0395d294, type: 2}
+  optionCanvasPrefab: {fileID: 2338827833415526325}
   range: 8
   useLaser: 1
   lineRenderer: {fileID: 5039496863394883317}
   laserDamage: 0.5
   laserEffect: {fileID: 8333827789341179491}
   rotationSpeed: 1.75
-  rangeIndicator: {fileID: 7684949521634504838}
-  rangeMaterial: {fileID: 2100000, guid: 2066bcef515c383419d368ac0395d294, type: 2}
-  optionCanvasPrefab: {fileID: 2338827833415526325}
 --- !u!61 &817551039
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -455,12 +456,12 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
       value: 
       objectReference: {fileID: 817551040}
-    - target: {fileID: 7644884733978189270, guid: 9bdbe560f89d4ae42911cc1e7cb0addc,
-        type: 3}
-      propertyPath: structurePrefab
-      value: 
-      objectReference: {fileID: 817551037}
     - target: {fileID: 7390847495100042059, guid: 9bdbe560f89d4ae42911cc1e7cb0addc,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 817551040}
+    - target: {fileID: 5619576480153540849, guid: 9bdbe560f89d4ae42911cc1e7cb0addc,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
       value: 
@@ -470,11 +471,11 @@ PrefabInstance:
       propertyPath: structurePrefab
       value: 
       objectReference: {fileID: 817551037}
-    - target: {fileID: 5619576480153540849, guid: 9bdbe560f89d4ae42911cc1e7cb0addc,
+    - target: {fileID: 7644884733978189270, guid: 9bdbe560f89d4ae42911cc1e7cb0addc,
         type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
+      propertyPath: structurePrefab
       value: 
-      objectReference: {fileID: 817551040}
+      objectReference: {fileID: 817551037}
     - target: {fileID: 4850424970098683382, guid: 9bdbe560f89d4ae42911cc1e7cb0addc,
         type: 3}
       propertyPath: structurePrefab

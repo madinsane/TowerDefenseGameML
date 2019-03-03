@@ -13,9 +13,9 @@ public class Wall : Structure
     }
 
     // Update is called once per frame
-    void Update()
+    new void Update()
     {
-        
+        base.Update();
     }
 
     void Taunt()

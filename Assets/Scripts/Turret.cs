@@ -6,8 +6,6 @@ public class Turret : Structure
 {
     private Enemy enemy;
 
-    private LineRenderer rangeLine;
-
     [Header("Bullet Attributes")]
     public float range = 5f;
     private int fireCountdown = 0;
@@ -20,22 +18,14 @@ public class Turret : Structure
 
     [Header("Setup")]
     public float rotationSpeed = 1.75f;
-    public GameObject rangeIndicator;
-    public Material rangeMaterial;
-    public GameObject optionCanvasPrefab;
 
     //public GameObject bulletPrefab;
     //public Transform firePoint;
-    
-    private bool mouseUpSelect = false;
-    private bool uiDelay = false;
-    private int uiDelayCounter = 0;
 
     // Start is called before the first frame update
     new void Start()
     {
-        unit.InitHealth();
-        unit.InitStructure();
+        base.Start();
         opponentTag = "Enemy";
         fireCountdown = unit.attackRate;
         if (useLaser)
@@ -43,9 +33,6 @@ public class Turret : Structure
             lineRenderer.enabled = false;
             laserEffect.Stop();
         }
-        rangeLine = rangeIndicator.DrawCircle(range/2, 0.1f, rangeMaterial);
-        rangeLine.enabled = false;
-        optionCanvasPrefab.SetActive(false);
         InvokeRepeating("UpdateTarget", 0f, 0.5f);
     }
 
@@ -71,42 +58,9 @@ public class Turret : Structure
     }
 
     // Update is called once per frame
-    void Update()
+    new void Update()
     {
-        if (uiDelay)
-        {
-            uiDelayCounter--;
-        }
-        if (uiDelayCounter <= 0 && uiDelay)
-        {
-            optionCanvasPrefab.SetActive(false);
-            uiDelay = false;
-        }
-        if (mouseUpSelect && IsSelected && Input.GetMouseButtonDown(0))
-        {
-            IsSelected = false;
-            mouseUpSelect = false;
-            rangeLine.enabled = false;
-            uiDelay = true;
-            uiDelayCounter = 10;
-        }
-
-
-        if (IsSelected)
-        {
-            if (BuildManager.instance.IsPlacing)
-            {
-                IsSelected = false;
-                mouseUpSelect = false;
-                rangeLine.enabled = false;
-                optionCanvasPrefab.SetActive(false);
-            }
-            else if (Input.GetMouseButtonUp(0))
-            {
-                mouseUpSelect = true;
-            }
-            DisplayStats();
-        }
+        base.Update();
         if (target == null)
         {
             if (useLaser)
@@ -170,15 +124,6 @@ public class Turret : Structure
             projectile.Seek(target);
         }
     }*/
-
-    void DisplayStats()
-    {
-        if (!rangeLine.enabled)
-        {
-            rangeLine.enabled = true;
-            optionCanvasPrefab.SetActive(true);
-        }
-    }
 
     private void OnDrawGizmosSelected()
     {

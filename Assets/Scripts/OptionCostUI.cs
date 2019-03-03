@@ -22,7 +22,7 @@ public class OptionCostUI : MonoBehaviour
     void Start()
     {
         shop = shopPrefab.GetComponent<Shop>();
-        unit = structurePrefab.GetComponent<Turret>().unit;
+        unit = structurePrefab.GetComponent<Structure>().unit;
         InvokeRepeating("UpdateCost", 0f, 0.25f);
     }
 
