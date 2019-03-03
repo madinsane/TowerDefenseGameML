@@ -32,7 +32,6 @@ public class Entity : MonoBehaviour
     public virtual void Kill()
     {
         //StatManager.Gold += unit.value;
-        StatManager.DefenseUnit -= unit.defenseUnit;
         Destroy(gameObject);
     }
 }

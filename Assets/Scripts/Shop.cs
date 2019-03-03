@@ -33,6 +33,11 @@ public class Shop : MonoBehaviour
                 buildManager.CurrentTurret = name;
                 buildManager.SetTurretToBuild(buildManager.laserTurret);
                 break;
+            case "BaseWall":
+                Debug.Log("Wall selected");
+                buildManager.CurrentTurret = name;
+                buildManager.SetTurretToBuild(buildManager.baseWall);
+                break;
             default:
                 Debug.Log("Structure not found");
                 break;
@@ -54,6 +59,9 @@ public class Shop : MonoBehaviour
             case "LaserTurret":
                 cost = buildManager.laserTurret.cost;
                 break;
+            case "BaseWall":
+                cost = buildManager.baseWall.cost;
+                break;
             default:
                 Debug.Log("Structure not found");
                 break;
@@ -74,6 +82,9 @@ public class Shop : MonoBehaviour
                 break;
             case "LaserTurret":
                 duCost = buildManager.laserTurret.defenseUnit;
+                break;
+            case "BaseWall":
+                duCost = buildManager.baseWall.defenseUnit;
                 break;
             default:
                 Debug.Log("Structure not found");

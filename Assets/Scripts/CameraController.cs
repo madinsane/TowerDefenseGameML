@@ -37,6 +37,7 @@ public class CameraController : MonoBehaviour
         {
             transform.Translate(new Vector3(panSpeed * Time.deltaTime, 0, 0), Space.World);
         }
+        
         float scroll = Input.GetAxis("Mouse ScrollWheel");
         if (scroll != 0.0f)
         {
@@ -45,6 +46,11 @@ public class CameraController : MonoBehaviour
         }
 
         Camera.main.orthographicSize = Mathf.MoveTowards(Camera.main.orthographicSize, targetOrtho, smoothSpeed * Time.deltaTime);
+        if (Input.GetKey("space"))
+        {
+            transform.position = new Vector3(0, 0, -10);
+            
+        }
     }
 
 

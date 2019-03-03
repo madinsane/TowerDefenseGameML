@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Turret : AttackEntity
+public class Turret : Structure
 {
     private Enemy enemy;
 
@@ -26,7 +26,7 @@ public class Turret : AttackEntity
 
     //public GameObject bulletPrefab;
     //public Transform firePoint;
-    public bool IsSelected { get; set; }
+    
     private bool mouseUpSelect = false;
     private bool uiDelay = false;
     private int uiDelayCounter = 0;

@@ -27,7 +27,7 @@ public class Build : MonoBehaviour
             {
                 if (hit.collider.tag == "Structure")
                 {
-                    hit.collider.gameObject.GetComponent<Turret>().IsSelected = true;
+                    hit.collider.gameObject.GetComponent<Structure>().IsSelected = true;
                 }
             }
             

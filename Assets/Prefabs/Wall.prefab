@@ -203,7 +203,7 @@ Transform:
   m_GameObject: {fileID: 6315647580638824714}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -1.89, y: -0, z: 0}
-  m_LocalScale: {x: 4, y: 4, z: 1}
+  m_LocalScale: {x: 2, y: 4, z: 1}
   m_Children:
   - {fileID: 3963754403333486002}
   m_Father: {fileID: 0}
@@ -316,12 +316,34 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6ee22b09709aeee419ce5adbb933d2be, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  unit:
+    isMelee: 1
+    damage: 10
+    range: 0.5
+    attackRate: 60
+    isSuicide: 0
+    areaOfEffect: 0
+    bulletPrefab: {fileID: 0}
+    firePoint: {fileID: 0}
+    maxHealth: 100
+    speed: 10
+    isFlying: 0
+    damageUpFactor: 0.25
+    healthUpFactor: 0.5
+    attackRateUpFactor: 0.1
+    valueFactor: 0.5
+    defenseUnit: 6
+    baseValue: 50
+    healthBar: {fileID: 3094160324901539463}
+    upgradeIcons: {fileID: 0}
+    aggroRange: 2
+    impactEffect: {fileID: 0}
+  opponentTag: 
   wall:
     prefab: {fileID: 6315647580638824714}
     cost: 100
-    maxHealth: 2000
-    value: 50
-    healthBar: {fileID: 3094160324901539463}
+    defenseUnit: 6
+    range: 5
 --- !u!1 &7261604212641126616
 GameObject:
   m_ObjectHideFlags: 0

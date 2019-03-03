@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Wall : Entity
+public class Wall : Structure
 {
-    public Structure wall;
+    public StructureShopData wall;
     // Start is called before the first frame update
     new void Start()
     {

@@ -6,16 +6,18 @@ public class BuildManager : MonoBehaviour
 {
     public static BuildManager instance;
 
-    private Structure turretToBuild;
+    private StructureShopData turretToBuild;
     private SpriteRenderer spriteRenderer;
     [Header("Setup")]
     public GameObject placementPrefab;
     public Transform spawnPoint;
 
     [Header("Structures")]
-    public Structure baseTurret;
-    public Structure missileTurret;
-    public Structure laserTurret;
+    public StructureShopData baseTurret;
+    public StructureShopData missileTurret;
+    public StructureShopData laserTurret;
+
+    public StructureShopData baseWall;
 
     [Header("Units")]
     public Summon baseUnit;
@@ -39,12 +41,12 @@ public class BuildManager : MonoBehaviour
         AlphaPreview();
     }
 
-    public Structure GetTurretToBuild()
+    public StructureShopData GetTurretToBuild()
     {
         return turretToBuild;
     }
 
-    public void SetTurretToBuild(Structure turret)
+    public void SetTurretToBuild(StructureShopData turret)
     {
         turretToBuild = turret;
         IsPlacing = true;

@@ -1,28 +1,26 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 
-[System.Serializable]
-public class Structure
+public class Structure : AttackEntity
 {
-    [Header("Shop")]
-    public GameObject prefab;
-    public int cost;
-    public int defenseUnit;
+    public bool IsSelected { get; set; }
+    // Start is called before the first frame update
+    protected new void Start()
+    {
+        base.Start();
+    }
 
-    //public float Health { get; set; }
+    // Update is called once per frame
+    void Update()
+    {
+        
+    }
 
-    //[Header("Defense")]
-    //public float maxHealth;
-
-    [Header("Misc")]
-    //public int value = 50;
-    //public Image healthBar;
-    public float range = 5f;
-
-    //public void InitHealth()
-    //{
-    //    Health = maxHealth;
-    //}
+    public override void Kill()
+    {
+        StatManager.Gold += unit.baseValue;
+        StatManager.DefenseUnit -= unit.defenseUnit;
+        Destroy(gameObject);
+    }
 }
