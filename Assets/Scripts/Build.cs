@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Tilemaps;
 using UnityEngine.EventSystems;
+using UnityEngine.UI;
 
 public class Build : MonoBehaviour
 {
@@ -19,7 +20,24 @@ public class Build : MonoBehaviour
             transform.position = Vector2.Lerp(transform.position, point, 1f);
 
             if (EventSystem.current.IsPointerOverGameObject())
-                return;
+            {
+                PointerEventData pointer = new PointerEventData(EventSystem.current);
+                pointer.position = Input.mousePosition;
+
+                List<RaycastResult> raycastResults = new List<RaycastResult>();
+                EventSystem.current.RaycastAll(pointer, raycastResults);
+
+                if (raycastResults.Count > 0)
+                {
+                    foreach (var go in raycastResults)
+                    {
+                        if (go.gameObject.tag == "Shop")
+                        {
+                            return;
+                        }
+                    }
+                }
+            }
 
             point.z = Camera.main.transform.position.z;
             RaycastHit2D hit = Physics2D.Raycast(point, Vector2.zero);
@@ -45,7 +63,24 @@ public class Build : MonoBehaviour
             transform.position = Vector2.Lerp(transform.position, point, 1f);
 
             if (EventSystem.current.IsPointerOverGameObject())
-                return;
+            {
+                PointerEventData pointer = new PointerEventData(EventSystem.current);
+                pointer.position = Input.mousePosition;
+
+                List<RaycastResult> raycastResults = new List<RaycastResult>();
+                EventSystem.current.RaycastAll(pointer, raycastResults);
+
+                if (raycastResults.Count > 0)
+                {
+                    foreach (var go in raycastResults)
+                    {
+                        if (go.gameObject.tag == "Shop")
+                        {
+                            return;
+                        }
+                    }
+                }
+            }
             //GameObject turretToBuild = BuildManager.instance.GetTurretToBuild();
 
             point.z = Camera.main.transform.position.z;
@@ -78,7 +113,24 @@ public class Build : MonoBehaviour
         if (Input.GetMouseButtonDown(0) && BuildManager.instance.IsPlacing)
         {
             if (EventSystem.current.IsPointerOverGameObject())
-                return;
+            {
+                PointerEventData pointer = new PointerEventData(EventSystem.current);
+                pointer.position = Input.mousePosition;
+
+                List<RaycastResult> raycastResults = new List<RaycastResult>();
+                EventSystem.current.RaycastAll(pointer, raycastResults);
+
+                if (raycastResults.Count > 0)
+                {
+                    foreach (var go in raycastResults)
+                    {
+                        if (go.gameObject.tag == "Shop")
+                        {
+                            return;
+                        }
+                    }
+                }
+            }
             Vector3 point = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             //GameObject turretToBuild = BuildManager.instance.GetTurretToBuild();
 
