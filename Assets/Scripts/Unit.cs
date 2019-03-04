@@ -42,6 +42,7 @@ public class Unit
     public HorizontalLayoutGroup upgradeIcons;
     public float aggroRange = 2f;
     public GameObject impactEffect;
+    public string name = "";
 
     public void InitHealth()
     {

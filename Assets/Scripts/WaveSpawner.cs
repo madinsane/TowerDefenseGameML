@@ -1,18 +1,39 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class WaveSpawner : MonoBehaviour
 {
-    public Transform enemyPrefab;
+    public static int EnemiesAlive { get; set; }
+
+    [Header("Enemies")]
+    public GameObject enemySetPrefab;
+
+    [Header("Setup")]
     public Transform spawnPoint;
     public float enemyDelay = 0.2f;
+    public int valuePerWave = 25;
+    public int baseValue = 0;
+    public Text waveText;
 
     public float timeBetweenWaves = 5f;
     private float countdown = 2f;
 
+    private Enemy[] enemies;
+    private int maxIterations;
+    private SortedList<int, int> nextWave;
+
     private int waveNumber = 1;
-    
+
+    void Start()
+    {
+        enemies = enemySetPrefab.GetComponentsInChildren<Enemy>();
+        maxIterations = 20;
+        nextWave = new SortedList<int, int>();
+        PrepareWave();
+    }
+
     void Update()
     {
         if (countdown <= 0f)
@@ -20,22 +41,81 @@ public class WaveSpawner : MonoBehaviour
             StartCoroutine(SpawnWave());
             countdown = timeBetweenWaves;
         }
-        countdown -= Time.deltaTime;
+        if (EnemiesAlive <= 0)
+        {
+            countdown -= Time.deltaTime;
+            EnemiesAlive = 0;
+        }
+    }
+
+    void PrepareWave()
+    {
+        
+        int currentValue = baseValue + (valuePerWave * waveNumber);
+        System.Random random = new System.Random();
+        int index = 0;
+        int enemyValue = 0;
+        int iterations = 0;
+        while (currentValue > 0)
+        {
+            index = random.Next(0, enemies.Length);
+            enemyValue = enemies[index].unit.baseValue;
+            if (enemyValue <= baseValue + (valuePerWave * waveNumber))
+            {
+                currentValue -= enemyValue;
+                if (nextWave.ContainsKey(index))
+                {
+                    nextWave[index]++;
+                } else
+                {
+                    nextWave.Add(index, 1);
+                }
+            }
+            else
+            {
+                iterations++;
+                if (iterations > maxIterations)
+                {
+                    break;
+                }
+            }
+        }
+        UpdateWaveText();
+    }
+
+    void UpdateWaveText()
+    {
+        System.Text.StringBuilder sb = new System.Text.StringBuilder();
+        sb.AppendLine("Next Wave");
+        string name;
+        foreach (var pair in nextWave)
+        {
+            name = enemies[pair.Key].unit.name;
+            sb.AppendLine(name + " \t" + pair.Value);
+        }
+        waveText.text = sb.ToString();
     }
 
     IEnumerator SpawnWave()
     {
-        //Debug.Log("Wave Incoming!");
-        for (int i = 0; i < waveNumber; i++)
+        //Debug.Log("Wave Incoming: " + waveNumber);
+        foreach (var pair in nextWave)
         {
-            SpawnEnemy();
-            yield return new WaitForSeconds(enemyDelay);
+            for (int i = 0; i < pair.Value; i++)
+            {
+                SpawnEnemy(pair.Key);
+                yield return new WaitForSeconds(enemyDelay);
+            }
         }
         waveNumber++;
+        nextWave.Clear();
+        PrepareWave();
     }
 
-    void SpawnEnemy()
+    void SpawnEnemy(int index)
     {
-        Instantiate(enemyPrefab, spawnPoint.position, spawnPoint.rotation);
+        Enemy enemy = Instantiate(enemies[index], spawnPoint.position, spawnPoint.rotation).GetComponent<Enemy>();
+        EnemiesAlive++;
+        enemy.PartOfWave = true;
     }
 }

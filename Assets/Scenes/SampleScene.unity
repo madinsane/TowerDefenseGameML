@@ -532,7 +532,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 588883946, guid: ea0df9023a87ed344902773b71985e4f, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0.000034332275
+      value: 0.000030517578
       objectReference: {fileID: 0}
     - target: {fileID: 1543843472, guid: ea0df9023a87ed344902773b71985e4f, type: 3}
       propertyPath: m_AnchorMax.x
@@ -548,6 +548,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ea0df9023a87ed344902773b71985e4f, type: 3}
+--- !u!114 &535188543 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4009858845912235774, guid: 52da9aef52f17f1489629ebcaeeff4b5,
+    type: 3}
+  m_PrefabInstance: {fileID: 6160109008643170885}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &667062519
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1771,7 +1783,73 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 4318417652109417882, guid: 52da9aef52f17f1489629ebcaeeff4b5,
+        type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4318417652109417882, guid: 52da9aef52f17f1489629ebcaeeff4b5,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4318417652109417882, guid: 52da9aef52f17f1489629ebcaeeff4b5,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4318417652109417882, guid: 52da9aef52f17f1489629ebcaeeff4b5,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4564510981371247092, guid: 52da9aef52f17f1489629ebcaeeff4b5,
+        type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4564510981371247092, guid: 52da9aef52f17f1489629ebcaeeff4b5,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4564510981371247092, guid: 52da9aef52f17f1489629ebcaeeff4b5,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4564510981371247092, guid: 52da9aef52f17f1489629ebcaeeff4b5,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3223301755568286131, guid: 52da9aef52f17f1489629ebcaeeff4b5,
+        type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3223301755568286131, guid: 52da9aef52f17f1489629ebcaeeff4b5,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3223301755568286131, guid: 52da9aef52f17f1489629ebcaeeff4b5,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3223301755568286131, guid: 52da9aef52f17f1489629ebcaeeff4b5,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1218228309651507743, guid: 52da9aef52f17f1489629ebcaeeff4b5,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -0.05001831
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 8650285855836161370, guid: 52da9aef52f17f1489629ebcaeeff4b5, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 52da9aef52f17f1489629ebcaeeff4b5, type: 3}
 --- !u!1001 &6279557666220158470
 PrefabInstance:
@@ -1930,6 +2008,22 @@ PrefabInstance:
       propertyPath: spawnPoint
       value: 
       objectReference: {fileID: 1192096942}
+    - target: {fileID: 6279557666307883431, guid: 472845f585d35674988f56d98ef79969,
+        type: 3}
+      propertyPath: enemySetPrefab
+      value: 
+      objectReference: {fileID: 5779321686696406211, guid: aca06c7a0e5a1a34c9a7585160bea44a,
+        type: 3}
+    - target: {fileID: 6279557666307883431, guid: 472845f585d35674988f56d98ef79969,
+        type: 3}
+      propertyPath: waveText
+      value: 
+      objectReference: {fileID: 535188543}
+    - target: {fileID: 6279557666307883431, guid: 472845f585d35674988f56d98ef79969,
+        type: 3}
+      propertyPath: timeBetweenWaves
+      value: 2.5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 472845f585d35674988f56d98ef79969, type: 3}
 --- !u!1001 &7013094092239747000

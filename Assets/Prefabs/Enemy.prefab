@@ -98,15 +98,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   unit:
     isMelee: 1
-    damage: 50
+    damage: 20
     range: 1.5
     attackRate: 60
-    isSuicide: 1
-    areaOfEffect: 5
+    isSuicide: 0
+    areaOfEffect: 0
     bulletPrefab: {fileID: 3539894598048087453, guid: fe5010a24d6d4764289561d0a2273cb6,
       type: 3}
     firePoint: {fileID: 7871462881396943206}
-    maxHealth: 1000
+    maxHealth: 100
     speed: 1
     isFlying: 0
     damageUpFactor: 0.25
@@ -120,6 +120,7 @@ MonoBehaviour:
     aggroRange: 2
     impactEffect: {fileID: 2643392415952849565, guid: 33f5d26be6cfa5f439619bfa6ef1f2c8,
       type: 3}
+    name: BaseEnemy
   opponentTag: Structure
   agent: {fileID: 5830846170475127814}
   navMesh: {fileID: 858826815662613914, guid: a1316a3bd8f0808499b27ba8ce093c5a, type: 3}

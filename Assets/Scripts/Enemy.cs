@@ -9,6 +9,7 @@ public class Enemy : AttackEntity
     private int wavepointIndex = 0;
     private float attackCountdown = 0f;
     private bool hasAttacked = false;
+    public bool PartOfWave { get; set; }
     public Transform TauntTarget { get; set; }
 
     public NavMeshAgent agent;
@@ -93,6 +94,7 @@ public class Enemy : AttackEntity
     {
         StatManager.Gold += unit.baseValue;
         StatManager.Food += unit.baseValue / 5;
+        WaveSpawner.EnemiesAlive--;
         Destroy(gameObject);
     }
 
