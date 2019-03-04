@@ -68,6 +68,7 @@ public class BuildManager : MonoBehaviour
                 return;
             }
             StatManager.Gold -= turretToBuild.cost;
+            StatManager.Score += turretToBuild.cost;
             StatManager.DefenseUnit += turretToBuild.defenseUnit;
             DisablePreview();
             Instantiate(turretToBuild.prefab, position, Quaternion.identity);
@@ -82,6 +83,7 @@ public class BuildManager : MonoBehaviour
             return;
         }
         StatManager.Food -= unit.cost;
+        StatManager.Score += unit.cost;
         Instantiate(unit.prefab, spawnPoint.position, Quaternion.identity);
     }
 

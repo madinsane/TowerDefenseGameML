@@ -93,6 +93,7 @@ public class Enemy : AttackEntity
     public override void Kill()
     {
         StatManager.Gold += unit.baseValue;
+        StatManager.Score += unit.baseValue;
         StatManager.Food += unit.baseValue / 5;
         WaveSpawner.EnemiesAlive--;
         Destroy(gameObject);

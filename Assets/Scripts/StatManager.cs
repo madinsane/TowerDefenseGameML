@@ -8,6 +8,7 @@ public class StatManager : MonoBehaviour
     public static int Food;
     public static int DefenseUnit;
     public static int DefenseUnitMax;
+    public static int Score;
     public int startGold = 500;
     public int startFood = 100;
     public int goldPerTick = 5;
@@ -21,6 +22,7 @@ public class StatManager : MonoBehaviour
         Food = startFood;
         DefenseUnit = 0;
         DefenseUnitMax = defenseUnitMax;
+        Score = 0;
         InvokeRepeating("GainPerTick", 0f, 1f);
     }
 

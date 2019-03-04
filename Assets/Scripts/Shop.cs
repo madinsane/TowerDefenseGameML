@@ -126,6 +126,7 @@ public class Shop : MonoBehaviour
         {
             structure.unit.InitHealth();
             StatManager.Gold -= cost;
+            StatManager.Score += cost;
         } else
         {
             Debug.Log("Insufficient Gold");
@@ -141,6 +142,7 @@ public class Shop : MonoBehaviour
             {
                 structure.unit.UpgradeStructure();
                 StatManager.Gold -= cost;
+                StatManager.Score += cost;
             } else
             {
                 Debug.Log("Already at max level");
