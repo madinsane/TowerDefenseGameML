@@ -16,6 +16,7 @@ public class BuildManager : MonoBehaviour
     public StructureShopData ballista;
     public StructureShopData flameblast;
     public StructureShopData frostbeam;
+    public StructureShopData lightningSpire;
 
     public StructureShopData baseWall;
 

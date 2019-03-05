@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Turret : Structure
+public class Tower : Structure
 {
     private Enemy enemy;
 
@@ -43,6 +43,14 @@ public class Turret : Structure
         GameObject nearestEnemy = null;
         foreach (GameObject enemy in enemies)
         {
+            if (unit.targetAirOnly)
+            {
+                Enemy enemyComp = enemy.GetComponent<Enemy>();
+                if (!enemyComp.unit.isFlying)
+                {
+                    continue;
+                }
+            }
             float distanceToEnemy = Vector3.Distance(transform.position, enemy.transform.position);
             if (distanceToEnemy < shortestDistance)
             {

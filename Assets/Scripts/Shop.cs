@@ -33,6 +33,11 @@ public class Shop : MonoBehaviour
                 buildManager.CurrentTurret = name;
                 buildManager.SetTurretToBuild(buildManager.frostbeam);
                 break;
+            case "LightningSpire":
+                Debug.Log("Lightning Spire selected");
+                buildManager.CurrentTurret = name;
+                buildManager.SetTurretToBuild(buildManager.lightningSpire);
+                break;
             case "BaseWall":
                 Debug.Log("Wall selected");
                 buildManager.CurrentTurret = name;
@@ -59,6 +64,9 @@ public class Shop : MonoBehaviour
             case "Frostbeam":
                 cost = buildManager.frostbeam.cost;
                 break;
+            case "LightningSpire":
+                cost = buildManager.lightningSpire.cost;
+                break;
             case "BaseWall":
                 cost = buildManager.baseWall.cost;
                 break;
@@ -82,6 +90,9 @@ public class Shop : MonoBehaviour
                 break;
             case "Frostbeam":
                 duCost = buildManager.frostbeam.defenseUnit;
+                break;
+            case "LightningSpire":
+                duCost = buildManager.lightningSpire.defenseUnit;
                 break;
             case "BaseWall":
                 duCost = buildManager.baseWall.defenseUnit;

@@ -143,19 +143,43 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   unit:
-    prefab: {fileID: 0}
-    cost: 0
-    defenseUnit: 0
     isMelee: 1
     damage: 0
     range: 0
     attackRate: 60
     isSuicide: 0
+    areaOfEffect: 0
+    damageType: 0
+    damageSource: 0
+    critChance: 0
+    statusChance: 0
+    isPureStatus: 0
+    bulletPrefab: {fileID: 0}
+    firePoint: {fileID: 0}
     maxHealth: 100
+    statusResist: 0
+    resists:
+      physResist: 0
+      lightningResist: 0
+      coldResist: 0
+      fireResist: 0
+      chaosResist: 0
+      meleeResist: 0
+      rangedResist: 0
+      siegeResist: 0
     speed: 0
-    value: 0
+    isFlying: 0
+    damageUpFactor: 0.25
+    healthUpFactor: 0.5
+    attackRateUpFactor: 0.1
+    valueFactor: 0.5
+    defenseUnit: 0
+    baseValue: 50
     healthBar: {fileID: 32397271371624976}
+    upgradeIcons: {fileID: 0}
     aggroRange: 2
+    impactEffect: {fileID: 0}
+    name: 
 --- !u!1 &7311496737251844259
 GameObject:
   m_ObjectHideFlags: 0
