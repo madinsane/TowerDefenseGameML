@@ -18,6 +18,32 @@ public class Projectile : MonoBehaviour
 
     public ProjectileData projectileData;
 
+    private void Start()
+    {
+        StartCoroutine(LifeTimeControl());
+        if (projectileData.isPiercing)
+            StartCoroutine(PierceRepeat());
+    }
+
+    IEnumerator LifeTimeControl()
+    {
+        yield return new WaitForSeconds(projectileData.lifeTime);
+        Destroy(gameObject);
+    }
+
+    IEnumerator PierceRepeat()
+    {
+        for (int i = 0; i < projectileData.lifeTime / 0.1f; i++)
+        {
+            if (TestExplode())
+            {
+                Explode();
+            }
+            yield return new WaitForSeconds(0.1f);
+        }
+
+    }
+
     public void Seek (Transform _target)
     {
         target = _target;
@@ -27,7 +53,7 @@ public class Projectile : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (target == null)
+        if (target == null && !projectileData.isPiercing)
         {
             Destroy(gameObject);
             return;
@@ -57,7 +83,8 @@ public class Projectile : MonoBehaviour
         {
             CreateDamage(target.GetComponent<Entity>());
         }
-        
+        if (projectileData.isPiercing)
+            return;
         Destroy(gameObject);
     }
 
@@ -89,6 +116,19 @@ public class Projectile : MonoBehaviour
                 CreateDamage(collider.GetComponent<Entity>());
             }
         }
+    }
+
+    bool TestExplode()
+    {
+        Collider2D[] colliders = Physics2D.OverlapCircleAll(transform.position, projectileData.explosionRadius);
+        foreach (Collider2D collider in colliders)
+        {
+            if (collider.tag == OpponentTag)
+            {
+                return true;
+            }
+        }
+        return false;
     }
 
     private void OnDrawGizmosSelected()

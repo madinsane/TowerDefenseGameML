@@ -18,10 +18,10 @@ public class Shop : MonoBehaviour
     {
         switch (name)
         {
-            case "Turret":
-                Debug.Log("Turret selected");
+            case "Ballista":
+                Debug.Log("Ballista selected");
                 buildManager.CurrentTurret = name;
-                buildManager.SetTurretToBuild(buildManager.baseTurret);
+                buildManager.SetTurretToBuild(buildManager.ballista);
                 break;
             case "Flameblast":
                 Debug.Log("Flameblast Tower selected");
@@ -50,8 +50,8 @@ public class Shop : MonoBehaviour
         int cost = 0;
         switch (name)
         {
-            case "Turret":
-                cost = buildManager.baseTurret.cost;
+            case "Ballista":
+                cost = buildManager.ballista.cost;
                 break;
             case "Flameblast":
                 cost = buildManager.flameblast.cost;
@@ -74,8 +74,8 @@ public class Shop : MonoBehaviour
         int duCost = 0;
         switch (name)
         {
-            case "Turret":
-                duCost = buildManager.baseTurret.defenseUnit;
+            case "Ballista":
+                duCost = buildManager.ballista.defenseUnit;
                 break;
             case "Flameblast":
                 duCost = buildManager.flameblast.defenseUnit;

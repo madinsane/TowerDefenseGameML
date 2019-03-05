@@ -13,7 +13,7 @@ public class BuildManager : MonoBehaviour
     public Transform spawnPoint;
 
     [Header("Structures")]
-    public StructureShopData baseTurret;
+    public StructureShopData ballista;
     public StructureShopData flameblast;
     public StructureShopData frostbeam;
 

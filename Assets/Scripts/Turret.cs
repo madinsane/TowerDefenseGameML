@@ -33,7 +33,7 @@ public class Turret : Structure
             lineRenderer.enabled = false;
             laserEffect.Stop();
         }
-        InvokeRepeating("UpdateTarget", 0f, 0.5f);
+        InvokeRepeating("UpdateTarget", 0f, 0.2f);
     }
 
     void UpdateTarget()

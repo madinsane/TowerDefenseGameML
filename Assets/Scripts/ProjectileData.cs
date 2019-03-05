@@ -12,8 +12,11 @@ public class ProjectileData
     public GameObject impactEffect;
 
     public Damage.Type damageType = Damage.Type.Physical;
-    public Damage.Source damageSource = Damage.Source.Melee;
+    public Damage.Source damageSource = Damage.Source.Ranged;
     public int critChance = 0;
     public int statusChance = 0;
     public bool isPureStatus = false;
+
+    public bool isPiercing = false;
+    public float lifeTime = 1f;
 }

@@ -532,7 +532,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 588883946, guid: ea0df9023a87ed344902773b71985e4f, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -0.000011444092
+      value: -0.000015258789
       objectReference: {fileID: 0}
     - target: {fileID: 1543843472, guid: ea0df9023a87ed344902773b71985e4f, type: 3}
       propertyPath: m_AnchorMax.x
@@ -1177,6 +1177,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_TagString
       value: Shop
+      objectReference: {fileID: 0}
+    - target: {fileID: 8978784033368038007, guid: 52da9aef52f17f1489629ebcaeeff4b5,
+        type: 3}
+      propertyPath: m_Name
+      value: BallistaButton
       objectReference: {fileID: 0}
     - target: {fileID: 1557249894251938242, guid: 52da9aef52f17f1489629ebcaeeff4b5,
         type: 3}
@@ -1926,6 +1931,11 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Shop
       objectReference: {fileID: 0}
+    - target: {fileID: 8291824780972626155, guid: 52da9aef52f17f1489629ebcaeeff4b5,
+        type: 3}
+      propertyPath: m_Name
+      value: TowerButton
+      objectReference: {fileID: 0}
     - target: {fileID: 4940111724417388947, guid: 52da9aef52f17f1489629ebcaeeff4b5,
         type: 3}
       propertyPath: m_TagString
@@ -1985,6 +1995,34 @@ PrefabInstance:
       propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
       value: Flameblast Tower\nFire AOE tower
       objectReference: {fileID: 0}
+    - target: {fileID: 1939079493120204169, guid: 52da9aef52f17f1489629ebcaeeff4b5,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 57f6a14e42c9e9e4fa9287290e76054f,
+        type: 3}
+    - target: {fileID: 4363295900052274309, guid: 52da9aef52f17f1489629ebcaeeff4b5,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 70cbecd76a8979243bb698115608c2c6,
+        type: 3}
+    - target: {fileID: 4106049405172702972, guid: 52da9aef52f17f1489629ebcaeeff4b5,
+        type: 3}
+      propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
+      value: Build a Tower
+      objectReference: {fileID: 0}
+    - target: {fileID: 127652629071029214, guid: 52da9aef52f17f1489629ebcaeeff4b5,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 70cbecd76a8979243bb698115608c2c6,
+        type: 3}
+    - target: {fileID: 8820065868177705888, guid: 52da9aef52f17f1489629ebcaeeff4b5,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
+      value: Ballista
+      objectReference: {fileID: 0}
     - target: {fileID: 4188140074011036361, guid: 52da9aef52f17f1489629ebcaeeff4b5,
         type: 3}
       propertyPath: m_Sprite
@@ -2001,6 +2039,11 @@ PrefabInstance:
       propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
       value: Frostbeam Tower\nLong range aoe slow tower
       objectReference: {fileID: 0}
+    - target: {fileID: 5979231919093401405, guid: 52da9aef52f17f1489629ebcaeeff4b5,
+        type: 3}
+      propertyPath: structureName
+      value: Ballista
+      objectReference: {fileID: 0}
     - target: {fileID: 3329408293415303410, guid: 52da9aef52f17f1489629ebcaeeff4b5,
         type: 3}
       propertyPath: structureName
@@ -2010,6 +2053,11 @@ PrefabInstance:
         type: 3}
       propertyPath: structureName
       value: Frostbeam
+      objectReference: {fileID: 0}
+    - target: {fileID: 6635029103111503078, guid: 52da9aef52f17f1489629ebcaeeff4b5,
+        type: 3}
+      propertyPath: structureName
+      value: Ballista
       objectReference: {fileID: 0}
     - target: {fileID: 3504699203399426998, guid: 52da9aef52f17f1489629ebcaeeff4b5,
         type: 3}
@@ -2209,6 +2257,23 @@ PrefabInstance:
     - target: {fileID: 646049809, guid: 472845f585d35674988f56d98ef79969, type: 3}
       propertyPath: frostbeam.range
       value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 646049809, guid: 472845f585d35674988f56d98ef79969, type: 3}
+      propertyPath: ballista.prefab
+      value: 
+      objectReference: {fileID: 7798812412441945243, guid: 28af48c4e4c83e34a92d86756b4cabe4,
+        type: 3}
+    - target: {fileID: 646049809, guid: 472845f585d35674988f56d98ef79969, type: 3}
+      propertyPath: ballista.cost
+      value: 200
+      objectReference: {fileID: 0}
+    - target: {fileID: 646049809, guid: 472845f585d35674988f56d98ef79969, type: 3}
+      propertyPath: ballista.defenseUnit
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 646049809, guid: 472845f585d35674988f56d98ef79969, type: 3}
+      propertyPath: ballista.range
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 6279557666307883431, guid: 472845f585d35674988f56d98ef79969,
         type: 3}

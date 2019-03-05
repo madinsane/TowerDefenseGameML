@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 7972222106959616920}
   - component: {fileID: 6297772938822711654}
   m_Layer: 0
-  m_Name: Bullet
+  m_Name: BallistaShot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -69,7 +69,7 @@ SpriteRenderer:
   m_SortingLayerID: -1668746125
   m_SortingLayer: 5
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 2b6af4bf323a8d04cb5a126e6285b2fc, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 7380842472fb05145b72ff0b5bb72c23, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -95,7 +95,14 @@ MonoBehaviour:
   projectileData:
     damage: 20
     speed: 0.1
-    homing: 1
-    explosionRadius: 0
+    homing: 0
+    explosionRadius: 0.1
     impactEffect: {fileID: 7687255503685256080, guid: eaeacef6228f9584c972df12485a77ce,
       type: 3}
+    damageType: 0
+    damageSource: 1
+    critChance: 25
+    statusChance: 0
+    isPureStatus: 0
+    isPiercing: 1
+    lifeTime: 1
