@@ -1238,6 +1238,26 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 384651709417882508, guid: 52da9aef52f17f1489629ebcaeeff4b5,
+        type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 384651709417882508, guid: 52da9aef52f17f1489629ebcaeeff4b5,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 384651709417882508, guid: 52da9aef52f17f1489629ebcaeeff4b5,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 384651709417882508, guid: 52da9aef52f17f1489629ebcaeeff4b5,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 52da9aef52f17f1489629ebcaeeff4b5, type: 3}
 --- !u!1001 &6279557666220158470
@@ -1390,7 +1410,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 646049809, guid: 472845f585d35674988f56d98ef79969, type: 3}
       propertyPath: baseWall.range
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 646049809, guid: 472845f585d35674988f56d98ef79969, type: 3}
       propertyPath: flameblast.prefab
@@ -1459,6 +1479,23 @@ PrefabInstance:
     - target: {fileID: 646049809, guid: 472845f585d35674988f56d98ef79969, type: 3}
       propertyPath: lightningSpire.range
       value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 646049809, guid: 472845f585d35674988f56d98ef79969, type: 3}
+      propertyPath: plague.prefab
+      value: 
+      objectReference: {fileID: 6498289281491901419, guid: 5be528e5cbfbd094387425b1cc2e4f35,
+        type: 3}
+    - target: {fileID: 646049809, guid: 472845f585d35674988f56d98ef79969, type: 3}
+      propertyPath: plague.cost
+      value: 350
+      objectReference: {fileID: 0}
+    - target: {fileID: 646049809, guid: 472845f585d35674988f56d98ef79969, type: 3}
+      propertyPath: plague.defenseUnit
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 646049809, guid: 472845f585d35674988f56d98ef79969, type: 3}
+      propertyPath: plague.range
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 6279557666307883431, guid: 472845f585d35674988f56d98ef79969,
         type: 3}

@@ -120,6 +120,9 @@ public class AttackEntity : Entity
         if (unit.isPureStatus)
         {
             entity.TakeStatus(Status.ApplyStatus(unit.damageType, entity.unit.statusResist));
+        } else if (unit.isPureDOT)
+        {
+            CreateDOT(entity);
         } else
         {
             float defense = Damage.CalculateDefense(unit.damageType, unit.damageSource, entity.unit.resists);
@@ -130,6 +133,13 @@ public class AttackEntity : Entity
             }
             entity.TakeDamage(packet.damage);
         }
+    }
+
+    protected void CreateDOT(Entity entity)
+    {
+        float defense = Damage.CalculateDefense(unit.damageType, unit.damageSource, entity.unit.resists);
+        Damage.DOT dot = Damage.CalculateDot(unit.damageType, unit.damage, defense, entity.unit.maxHealth);
+        entity.TakeDOT(dot);
     }
 
     public override void Kill()

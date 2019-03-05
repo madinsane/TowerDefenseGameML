@@ -23,6 +23,7 @@ public class Unit
     public int critChance = 0;
     public int statusChance = 0;
     public bool isPureStatus = false;
+    public bool isPureDOT = false;
     public bool targetAirOnly = false;
 
     [Header("Bullet")]

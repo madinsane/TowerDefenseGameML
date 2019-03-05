@@ -26,7 +26,7 @@ public static class Damage
     {
         public Type type;
         public float damagePerTick;
-        public int duration;
+        public float duration;
     }
 
     [System.Serializable]
@@ -126,12 +126,12 @@ public static class Damage
         float damage = incDamage * (1 - defense);
         int damagePercent = (int)Mathf.Floor(damage / maxHealth) * 100;
         float durationSeconds = damagePercent * Status.durationPerPercent;
-        int frameDuration = (int)Mathf.Floor(durationSeconds * 60);
+        //int frameDuration = (int)Mathf.Floor(durationSeconds * 60);
         return new DOT
         {
             type = _type,
             damagePerTick = damage / durationSeconds,
-            duration = frameDuration
+            duration = durationSeconds
         };
     }
 }

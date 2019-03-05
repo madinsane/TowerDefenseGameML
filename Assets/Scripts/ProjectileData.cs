@@ -16,6 +16,7 @@ public class ProjectileData
     public int critChance = 0;
     public int statusChance = 0;
     public bool isPureStatus = false;
+    public bool isPureDOT = false;
 
     public bool isPiercing = false;
     public float lifeTime = 1f;

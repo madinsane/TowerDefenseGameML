@@ -112,7 +112,7 @@ MonoBehaviour:
     bulletPrefab: {fileID: 3539894598048087453, guid: fe5010a24d6d4764289561d0a2273cb6,
       type: 3}
     firePoint: {fileID: 7871462881396943206}
-    maxHealth: 100
+    maxHealth: 200
     statusResist: 0
     resists:
       physResist: 0
@@ -124,7 +124,7 @@ MonoBehaviour:
       rangedResist: 0
       siegeResist: 0
     speed: 1
-    isFlying: 1
+    isFlying: 0
     damageUpFactor: 0.25
     healthUpFactor: 0.5
     attackRateUpFactor: 0.1
@@ -195,7 +195,7 @@ NavMeshAgent:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7871462881396943208}
   m_Enabled: 1
-  m_AgentTypeID: -1372625422
+  m_AgentTypeID: 0
   m_Radius: 0.32
   m_Speed: 3.5
   m_Acceleration: 8

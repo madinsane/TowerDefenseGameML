@@ -94,7 +94,10 @@ public class Projectile : MonoBehaviour
         {
             entity.TakeStatus(Status.ApplyStatus(projectileData.damageType, entity.unit.statusResist));
         }
-        else
+        else if (projectileData.isPureDOT)
+        {
+            CreateDOT(entity);
+        } else
         {
             float defense = Damage.CalculateDefense(projectileData.damageType, projectileData.damageSource, entity.unit.resists);
             Damage.Packet packet = Damage.CalculateDamage(projectileData.damageType, projectileData.damage, defense, projectileData.critChance, projectileData.statusChance, entity.unit.statusResist, entity.unit.maxHealth);
@@ -116,6 +119,13 @@ public class Projectile : MonoBehaviour
                 CreateDamage(collider.GetComponent<Entity>());
             }
         }
+    }
+
+    protected void CreateDOT(Entity entity)
+    {
+        float defense = Damage.CalculateDefense(projectileData.damageType, projectileData.damageSource, entity.unit.resists);
+        Damage.DOT dot = Damage.CalculateDot(projectileData.damageType, projectileData.damage, defense, entity.unit.maxHealth);
+        entity.TakeDOT(dot);
     }
 
     bool TestExplode()

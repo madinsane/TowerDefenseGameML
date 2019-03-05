@@ -17,6 +17,7 @@ public class BuildManager : MonoBehaviour
     public StructureShopData flameblast;
     public StructureShopData frostbeam;
     public StructureShopData lightningSpire;
+    public StructureShopData plague;
 
     public StructureShopData baseWall;
 

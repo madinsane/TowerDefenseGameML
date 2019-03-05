@@ -12,7 +12,7 @@ public static class Status
     public struct Packet
     {
         public Type type;
-        public int duration;
+        public float duration;
     }
 
     public const float shockDefenseMultiplier = 1.5f;
@@ -50,7 +50,8 @@ public static class Status
         else if (damagePercent < 5)
             damagePercent = 5;
         float durationSeconds = damagePercent * durationPerPercent;
-        packet.duration = (int)Mathf.Floor(durationSeconds * 60);
+        //packet.duration = (int)Mathf.Floor(durationSeconds * 60);
+        packet.duration = durationSeconds;
         return packet;
     }
 }

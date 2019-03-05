@@ -72,6 +72,23 @@ public class Entity : MonoBehaviour
         unit.StatusAffected = false;
     }
 
+    public void TakeDOT(Damage.DOT dot)
+    {
+        StartCoroutine(DOTTick(dot));
+    }
+
+    IEnumerator DOTTick(Damage.DOT dot)
+    {
+        for (int i = 0; i < (dot.duration / 0.1f); i++)
+        {
+            unit.healthBar.color = Color.magenta;
+            TakeDamage(dot.damagePerTick);
+            yield return new WaitForSeconds(0.1f);
+
+        }
+        unit.healthBar.color = new Color(0, 255, 5);
+    }
+
     public virtual void Kill()
     {
         //StatManager.Gold += unit.value;
