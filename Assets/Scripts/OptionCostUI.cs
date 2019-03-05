@@ -23,7 +23,7 @@ public class OptionCostUI : MonoBehaviour
     {
         shop = shopPrefab.GetComponent<Shop>();
         unit = structurePrefab.GetComponent<Structure>().unit;
-        InvokeRepeating("UpdateCost", 0f, 0.25f);
+        InvokeRepeating("UpdateCost", 0f, 0.1f);
     }
 
     void UpdateCost()
@@ -36,6 +36,9 @@ public class OptionCostUI : MonoBehaviour
                 {
                     costText.text = "MAX";
                     return;
+                } else if (cost == -2)
+                {
+                    costText.text = "STATUS";
                 }
                 break;
             case OptionType.Repair:

@@ -65,10 +65,10 @@ public class AttackEntity : Entity
             {
                 if (unit.areaOfEffect > 0f)
                 {
-                    Explode();
+                    Explode(transform);
                 } else
                 {
-                    target.gameObject.GetComponent<Entity>().Damage(unit.damage);
+                    CreateDamage(target.gameObject.GetComponent<Entity>());
                 }
             } else
             {
@@ -94,7 +94,7 @@ public class AttackEntity : Entity
         }
     }
 
-    void Explode()
+    protected void Explode(Transform transform)
     {
         Collider2D[] colliders = Physics2D.OverlapCircleAll(transform.position, unit.areaOfEffect);
         foreach (Collider2D collider in colliders)
@@ -104,14 +104,31 @@ public class AttackEntity : Entity
                 if (collider.tag == "CoreEntity")
                 {
                     Entity entity = collider.GetComponent<Entity>();
-                    entity.Damage(unit.damage);
+                    CreateDamage(entity);
                 }
             }
             if (collider.tag == opponentTag)
             {
                 Entity entity = collider.GetComponent<Entity>();
-                entity.Damage(unit.damage);
+                CreateDamage(entity);
             }
+        }
+    }
+
+    protected void CreateDamage(Entity entity)
+    {
+        if (unit.isPureStatus)
+        {
+            entity.TakeStatus(Status.ApplyStatus(unit.damageType, entity.unit.statusResist));
+        } else
+        {
+            float defense = Damage.CalculateDefense(unit.damageType, unit.damageSource, entity.unit.resists);
+            Damage.Packet packet = Damage.CalculateDamage(unit.damageType, unit.damage, defense, unit.critChance, unit.statusChance, entity.unit.statusResist, entity.unit.maxHealth);
+            if (packet.isStatus)
+            {
+                entity.TakeStatus(packet.status);
+            }
+            entity.TakeDamage(packet.damage);
         }
     }
 

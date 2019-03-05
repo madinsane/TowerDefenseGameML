@@ -18,7 +18,7 @@ public class Entity : MonoBehaviour
         
     }
 
-    public void Damage(float amount)
+    public void TakeDamage(float amount)
     {
         unit.Health -= amount;
         unit.healthBar.fillAmount = (unit.Health / unit.maxHealth);
@@ -27,6 +27,49 @@ public class Entity : MonoBehaviour
         {
             Kill();
         }
+    }
+
+    public void TakeStatus(Status.Packet packet)
+    {
+        if (unit.StatusAffected)
+            return;
+        int startAttackRate = unit.attackRate;
+        Damage.Resist startResist = unit.resists;
+        float startSpeed = unit.speed;
+        float startDamage = unit.damage; 
+        switch (packet.type)
+        {
+            case Status.Type.Shock:
+                unit.resists.physResist /= Status.shockDefenseMultiplier;
+                unit.resists.lightningResist /= Status.shockDefenseMultiplier;
+                unit.resists.coldResist /= Status.shockDefenseMultiplier;
+                unit.resists.fireResist /= Status.shockDefenseMultiplier;
+                unit.resists.chaosResist /= Status.shockDefenseMultiplier;
+                break;
+            case Status.Type.Chill:
+                unit.speed *= Status.chillMovespeedMultiplier;
+                unit.attackRate = Mathf.FloorToInt(unit.attackRate / Status.chillAttackspeedMultiplier);
+                break;
+            case Status.Type.Freeze:
+                unit.speed *= Status.freezeMovespeedMultiplier;
+                unit.attackRate = Mathf.FloorToInt(unit.attackRate / Status.freezeAttackspeedMultiplier);
+                break;
+            case Status.Type.Curse:
+                unit.damage *= Status.curseDamageMultiplier;
+                break;
+        }
+        unit.StatusAffected = true;
+        StartCoroutine(StatusDelay(packet.duration, startAttackRate, startResist, startSpeed, startDamage));
+    }
+
+    IEnumerator StatusDelay(float duration, int startAttackRate, Damage.Resist startResist, float startSpeed, float startDamage)
+    {
+        yield return new WaitForSeconds(duration);
+        unit.attackRate = startAttackRate;
+        unit.resists = startResist;
+        unit.speed = startSpeed;
+        unit.damage = startDamage;
+        unit.StatusAffected = false;
     }
 
     public virtual void Kill()

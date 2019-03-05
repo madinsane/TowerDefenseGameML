@@ -9,6 +9,7 @@ public class Unit
     public float Health { get; set; }
     public int UpgradeLevel { get; set; }
     public int Value { get; set; }
+    public bool StatusAffected { get; set; }
 
     [Header("Offense")]
     public bool isMelee = true;
@@ -17,6 +18,11 @@ public class Unit
     public int attackRate = 60;
     public bool isSuicide = false;
     public float areaOfEffect = 0f;
+    public Damage.Type damageType = Damage.Type.Physical;
+    public Damage.Source damageSource = Damage.Source.Melee;
+    public int critChance = 0;
+    public int statusChance = 0;
+    public bool isPureStatus = false;
 
     [Header("Bullet")]
     public GameObject bulletPrefab;
@@ -24,6 +30,8 @@ public class Unit
 
     [Header("Defense")]
     public float maxHealth = 100;
+    public float statusResist = 0f;
+    public Damage.Resist resists;
 
     [Header("Movement")]
     public float speed = 10f;
@@ -48,6 +56,7 @@ public class Unit
     {
         Health = maxHealth;
         healthBar.fillAmount = (Health / maxHealth);
+        StatusAffected = false;
     }
 
     public void InitStructure()
@@ -59,6 +68,8 @@ public class Unit
 
     public void UpgradeStructure()
     {
+        if (StatusAffected)
+            return;
         UpgradeLevel++;
         damage *= (1 + damageUpFactor);
         maxHealth *= (1 + healthUpFactor);

@@ -29,6 +29,7 @@ public static class Damage
         public int duration;
     }
 
+    [System.Serializable]
     public struct Resist
     {
         public float physResist;
@@ -40,6 +41,8 @@ public static class Damage
         public float rangedResist;
         public float siegeResist;
     }
+
+    public const int totalTypes = 5;
 
     public static Packet CalculateDamage(Type type, float incDamage, float defense, int critChance, int statusChance, float statusResist, float maxHealth)
     {

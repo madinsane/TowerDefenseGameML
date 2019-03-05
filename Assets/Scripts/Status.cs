@@ -23,7 +23,7 @@ public static class Status
     public const float curseDamageMultiplier = 0.5f;
     public const float durationPerPercent = 0.1f;
 
-    public static Packet ApplyStatus(Damage.Type type, float statusResist, bool isStatus = true, float maxHealth = 0, float damage = 0)
+    public static Packet ApplyStatus(Damage.Type type, float statusResist, bool isStatus = true, float maxHealth = 1, float damage = 0)
     {
         Packet packet = new Packet();
         switch (type)

@@ -23,15 +23,15 @@ public class Shop : MonoBehaviour
                 buildManager.CurrentTurret = name;
                 buildManager.SetTurretToBuild(buildManager.baseTurret);
                 break;
-            case "MissileTurret":
-                Debug.Log("Missile Turret selected");
+            case "Flameblast":
+                Debug.Log("Flameblast Tower selected");
                 buildManager.CurrentTurret = name;
-                buildManager.SetTurretToBuild(buildManager.missileTurret);
+                buildManager.SetTurretToBuild(buildManager.flameblast);
                 break;
-            case "LaserTurret":
-                Debug.Log("Laser Turret selected");
+            case "Frostbeam":
+                Debug.Log("Frostbeam Tower selected");
                 buildManager.CurrentTurret = name;
-                buildManager.SetTurretToBuild(buildManager.laserTurret);
+                buildManager.SetTurretToBuild(buildManager.frostbeam);
                 break;
             case "BaseWall":
                 Debug.Log("Wall selected");
@@ -53,11 +53,11 @@ public class Shop : MonoBehaviour
             case "Turret":
                 cost = buildManager.baseTurret.cost;
                 break;
-            case "MissileTurret":
-                cost = buildManager.missileTurret.cost;
+            case "Flameblast":
+                cost = buildManager.flameblast.cost;
                 break;
-            case "LaserTurret":
-                cost = buildManager.laserTurret.cost;
+            case "Frostbeam":
+                cost = buildManager.frostbeam.cost;
                 break;
             case "BaseWall":
                 cost = buildManager.baseWall.cost;
@@ -77,11 +77,11 @@ public class Shop : MonoBehaviour
             case "Turret":
                 duCost = buildManager.baseTurret.defenseUnit;
                 break;
-            case "MissileTurret":
-                duCost = buildManager.missileTurret.defenseUnit;
+            case "Flameblast":
+                duCost = buildManager.flameblast.defenseUnit;
                 break;
-            case "LaserTurret":
-                duCost = buildManager.laserTurret.defenseUnit;
+            case "Frostbeam":
+                duCost = buildManager.frostbeam.defenseUnit;
                 break;
             case "BaseWall":
                 duCost = buildManager.baseWall.defenseUnit;
@@ -95,6 +95,10 @@ public class Shop : MonoBehaviour
 
     public int GetStructureUpgradeCost(Unit structure)
     {
+        if (structure.StatusAffected)
+        {
+            return -2;
+        }
         if (structure.UpgradeLevel >= 5)
         {
             return -1;
@@ -136,6 +140,11 @@ public class Shop : MonoBehaviour
     public void UpgradeStructure(Entity structure)
     {
         int cost = GetStructureUpgradeCost(structure.unit);
+        if (cost == -2)
+        {
+            Debug.Log("Status Affected");
+            return;
+        }
         if (StatManager.Gold >= cost)
         {
             if (structure.unit.UpgradeLevel < 5)

@@ -532,7 +532,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 588883946, guid: ea0df9023a87ed344902773b71985e4f, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0.000022888184
+      value: -0.000011444092
       objectReference: {fileID: 0}
     - target: {fileID: 1543843472, guid: ea0df9023a87ed344902773b71985e4f, type: 3}
       propertyPath: m_AnchorMax.x
@@ -1891,16 +1891,20 @@ PrefabInstance:
     - target: {fileID: 8498196746752033633, guid: 52da9aef52f17f1489629ebcaeeff4b5,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 949.79
+      value: 949.79004
       objectReference: {fileID: 0}
     - target: {fileID: 8498196746752033633, guid: 52da9aef52f17f1489629ebcaeeff4b5,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -21.7
+      value: -21.699951
       objectReference: {fileID: 0}
     - target: {fileID: 1642389135, guid: 52da9aef52f17f1489629ebcaeeff4b5, type: 3}
       propertyPath: m_TagString
       value: Shop
+      objectReference: {fileID: 0}
+    - target: {fileID: 1642389135, guid: 52da9aef52f17f1489629ebcaeeff4b5, type: 3}
+      propertyPath: m_Name
+      value: FlameblastButton
       objectReference: {fileID: 0}
     - target: {fileID: 7056714048997102294, guid: 52da9aef52f17f1489629ebcaeeff4b5,
         type: 3}
@@ -1952,6 +1956,11 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Shop
       objectReference: {fileID: 0}
+    - target: {fileID: 9099853722599233730, guid: 52da9aef52f17f1489629ebcaeeff4b5,
+        type: 3}
+      propertyPath: m_Name
+      value: FrostbeamButton
+      objectReference: {fileID: 0}
     - target: {fileID: 3628944909546439277, guid: 52da9aef52f17f1489629ebcaeeff4b5,
         type: 3}
       propertyPath: m_TagString
@@ -1961,6 +1970,56 @@ PrefabInstance:
         type: 3}
       propertyPath: m_RaycastTarget
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1642389139, guid: 52da9aef52f17f1489629ebcaeeff4b5, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 577ea7dacb21c0147adc2c27d123ed5f,
+        type: 3}
+    - target: {fileID: 1642389138, guid: 52da9aef52f17f1489629ebcaeeff4b5, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
+      value: Flameblast
+      objectReference: {fileID: 0}
+    - target: {fileID: 4868362317688225659, guid: 52da9aef52f17f1489629ebcaeeff4b5,
+        type: 3}
+      propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
+      value: Flameblast Tower\nFire AOE tower
+      objectReference: {fileID: 0}
+    - target: {fileID: 4188140074011036361, guid: 52da9aef52f17f1489629ebcaeeff4b5,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: c6b74a29463535e4f9cbf449791d78ff,
+        type: 3}
+    - target: {fileID: 5927353693724408025, guid: 52da9aef52f17f1489629ebcaeeff4b5,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
+      value: Frostbeam
+      objectReference: {fileID: 0}
+    - target: {fileID: 1879768210763128317, guid: 52da9aef52f17f1489629ebcaeeff4b5,
+        type: 3}
+      propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
+      value: Frostbeam Tower\nLong range aoe slow tower
+      objectReference: {fileID: 0}
+    - target: {fileID: 3329408293415303410, guid: 52da9aef52f17f1489629ebcaeeff4b5,
+        type: 3}
+      propertyPath: structureName
+      value: Flameblast
+      objectReference: {fileID: 0}
+    - target: {fileID: 1744578476973982193, guid: 52da9aef52f17f1489629ebcaeeff4b5,
+        type: 3}
+      propertyPath: structureName
+      value: Frostbeam
+      objectReference: {fileID: 0}
+    - target: {fileID: 3504699203399426998, guid: 52da9aef52f17f1489629ebcaeeff4b5,
+        type: 3}
+      propertyPath: structureName
+      value: Frostbeam
+      objectReference: {fileID: 0}
+    - target: {fileID: 3647929145613859711, guid: 52da9aef52f17f1489629ebcaeeff4b5,
+        type: 3}
+      propertyPath: structureName
+      value: Flameblast
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 8650285855836161370, guid: 52da9aef52f17f1489629ebcaeeff4b5, type: 3}
@@ -2116,6 +2175,40 @@ PrefabInstance:
     - target: {fileID: 646049809, guid: 472845f585d35674988f56d98ef79969, type: 3}
       propertyPath: baseWall.range
       value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 646049809, guid: 472845f585d35674988f56d98ef79969, type: 3}
+      propertyPath: flameblast.prefab
+      value: 
+      objectReference: {fileID: 1889151354, guid: af0185c4be902114faa5115ec5329cac,
+        type: 3}
+    - target: {fileID: 646049809, guid: 472845f585d35674988f56d98ef79969, type: 3}
+      propertyPath: flameblast.cost
+      value: 250
+      objectReference: {fileID: 0}
+    - target: {fileID: 646049809, guid: 472845f585d35674988f56d98ef79969, type: 3}
+      propertyPath: flameblast.defenseUnit
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 646049809, guid: 472845f585d35674988f56d98ef79969, type: 3}
+      propertyPath: flameblast.range
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 646049809, guid: 472845f585d35674988f56d98ef79969, type: 3}
+      propertyPath: frostbeam.prefab
+      value: 
+      objectReference: {fileID: 817551037, guid: a3949a7914892ff4ab290ae34574629a,
+        type: 3}
+    - target: {fileID: 646049809, guid: 472845f585d35674988f56d98ef79969, type: 3}
+      propertyPath: frostbeam.cost
+      value: 300
+      objectReference: {fileID: 0}
+    - target: {fileID: 646049809, guid: 472845f585d35674988f56d98ef79969, type: 3}
+      propertyPath: frostbeam.defenseUnit
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 646049809, guid: 472845f585d35674988f56d98ef79969, type: 3}
+      propertyPath: frostbeam.range
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 6279557666307883431, guid: 472845f585d35674988f56d98ef79969,
         type: 3}

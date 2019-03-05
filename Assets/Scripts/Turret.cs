@@ -95,7 +95,13 @@ public class Turret : Structure
             lineRenderer.enabled = true;
             laserEffect.Play();
         }
-        enemy.Damage(laserDamage);
+        if (unit.areaOfEffect > 0)
+        {
+            Explode(enemy.transform);
+        } else
+        {
+            CreateDamage(enemy);
+        }
         laserEffect.transform.position = target.position;
         Vector3 dir = transform.position - target.position;
         dir.Normalize();

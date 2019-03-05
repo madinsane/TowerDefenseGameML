@@ -55,16 +55,28 @@ public class Projectile : MonoBehaviour
             Explode();
         } else
         {
-            Damage(target);
+            CreateDamage(target.GetComponent<Entity>());
         }
         
         Destroy(gameObject);
     }
 
-    void Damage(Transform _entity)
+    protected void CreateDamage(Entity entity)
     {
-        Entity entity = _entity.GetComponent<Entity>();
-        entity.Damage(projectileData.damage);
+        if (projectileData.isPureStatus)
+        {
+            entity.TakeStatus(Status.ApplyStatus(projectileData.damageType, entity.unit.statusResist));
+        }
+        else
+        {
+            float defense = Damage.CalculateDefense(projectileData.damageType, projectileData.damageSource, entity.unit.resists);
+            Damage.Packet packet = Damage.CalculateDamage(projectileData.damageType, projectileData.damage, defense, projectileData.critChance, projectileData.statusChance, entity.unit.statusResist, entity.unit.maxHealth);
+            if (packet.isStatus)
+            {
+                entity.TakeStatus(packet.status);
+            }
+            entity.TakeDamage(packet.damage);
+        }
     }
 
     void Explode()
@@ -74,7 +86,7 @@ public class Projectile : MonoBehaviour
         {
             if (collider.tag == OpponentTag)
             {
-                Damage(collider.transform);
+                CreateDamage(collider.GetComponent<Entity>());
             }
         }
     }

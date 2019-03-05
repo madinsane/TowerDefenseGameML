@@ -14,8 +14,8 @@ public class BuildManager : MonoBehaviour
 
     [Header("Structures")]
     public StructureShopData baseTurret;
-    public StructureShopData missileTurret;
-    public StructureShopData laserTurret;
+    public StructureShopData flameblast;
+    public StructureShopData frostbeam;
 
     public StructureShopData baseWall;
 

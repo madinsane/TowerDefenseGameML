@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 539741494}
   - component: {fileID: 539741493}
   m_Layer: 0
-  m_Name: Missile
+  m_Name: Fireball
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -69,7 +69,7 @@ SpriteRenderer:
   m_SortingLayerID: -1668746125
   m_SortingLayer: 5
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 4aa4eaf380f50924f999cdcaf0ba9e47, type: 3}
+  m_Sprite: {fileID: 21300000, guid: b6465f2ecccb1ed46b9e3b754f035516, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -93,9 +93,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   projectileData:
-    damage: 50
-    speed: 0.03
+    damage: 20
+    speed: 0.1
     homing: 1
     explosionRadius: 1
     impactEffect: {fileID: 2643392415952849565, guid: 33f5d26be6cfa5f439619bfa6ef1f2c8,
       type: 3}
+    damageType: 3
+    damageSource: 1
+    critChance: 10
+    statusChance: 0
+    isPureStatus: 0

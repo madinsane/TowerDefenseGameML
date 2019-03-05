@@ -10,4 +10,10 @@ public class ProjectileData
     public bool homing = true;
     public float explosionRadius = 0f;
     public GameObject impactEffect;
+
+    public Damage.Type damageType = Damage.Type.Physical;
+    public Damage.Source damageSource = Damage.Source.Melee;
+    public int critChance = 0;
+    public int statusChance = 0;
+    public bool isPureStatus = false;
 }
