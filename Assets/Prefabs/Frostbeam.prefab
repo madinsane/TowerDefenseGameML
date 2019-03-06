@@ -112,6 +112,8 @@ MonoBehaviour:
     critChance: 0
     statusChance: 0
     isPureStatus: 0
+    isPureDOT: 0
+    targetAirOnly: 0
     bulletPrefab: {fileID: 0}
     firePoint: {fileID: 1382820852}
     maxHealth: 250
@@ -229,8 +231,8 @@ LineRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 1177503323
-  m_SortingLayer: 3
+  m_SortingLayerID: -1668746125
+  m_SortingLayer: 5
   m_SortingOrder: 0
   m_Positions:
   - {x: 0, y: 0, z: 0}

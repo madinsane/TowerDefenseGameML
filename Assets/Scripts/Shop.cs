@@ -43,10 +43,20 @@ public class Shop : MonoBehaviour
                 buildManager.CurrentTurret = name;
                 buildManager.SetTurretToBuild(buildManager.plague);
                 break;
-            case "BaseWall":
-                Debug.Log("Wall selected");
+            case "OrganicWall":
+                Debug.Log("Organic Wall selected");
                 buildManager.CurrentTurret = name;
-                buildManager.SetTurretToBuild(buildManager.baseWall);
+                buildManager.SetTurretToBuild(buildManager.organicWall);
+                break;
+            case "MoltenWall":
+                Debug.Log("Molten Wall selected");
+                buildManager.CurrentTurret = name;
+                buildManager.SetTurretToBuild(buildManager.moltenWall);
+                break;
+            case "MirrorWall":
+                Debug.Log("Mirror Wall selected");
+                buildManager.CurrentTurret = name;
+                buildManager.SetTurretToBuild(buildManager.mirrorWall);
                 break;
             default:
                 Debug.Log("Structure not found");
@@ -75,8 +85,14 @@ public class Shop : MonoBehaviour
             case "Plague":
                 cost = buildManager.plague.cost;
                 break;
-            case "BaseWall":
-                cost = buildManager.baseWall.cost;
+            case "OrganicWall":
+                cost = buildManager.organicWall.cost;
+                break;
+            case "MoltenWall":
+                cost = buildManager.moltenWall.cost;
+                break;
+            case "MirrorWall":
+                cost = buildManager.mirrorWall.cost;
                 break;
             default:
                 Debug.Log("Structure not found");
@@ -105,8 +121,14 @@ public class Shop : MonoBehaviour
             case "Plague":
                 duCost = buildManager.plague.defenseUnit;
                 break;
-            case "BaseWall":
-                duCost = buildManager.baseWall.defenseUnit;
+            case "OrganicWall":
+                duCost = buildManager.organicWall.defenseUnit;
+                break;
+            case "MoltenWall":
+                duCost = buildManager.moltenWall.defenseUnit;
+                break;
+            case "MirrorWall":
+                duCost = buildManager.mirrorWall.defenseUnit;
                 break;
             default:
                 Debug.Log("Structure not found");

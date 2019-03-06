@@ -532,7 +532,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 588883946, guid: ea0df9023a87ed344902773b71985e4f, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -0.000019073486
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1543843472, guid: ea0df9023a87ed344902773b71985e4f, type: 3}
       propertyPath: m_AnchorMax.x
@@ -1258,6 +1258,11 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5425565010747264583, guid: 52da9aef52f17f1489629ebcaeeff4b5,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0.000034332275
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 52da9aef52f17f1489629ebcaeeff4b5, type: 3}
 --- !u!1001 &6279557666220158470
@@ -1496,6 +1501,57 @@ PrefabInstance:
     - target: {fileID: 646049809, guid: 472845f585d35674988f56d98ef79969, type: 3}
       propertyPath: plague.range
       value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 646049809, guid: 472845f585d35674988f56d98ef79969, type: 3}
+      propertyPath: organicWall.prefab
+      value: 
+      objectReference: {fileID: 6556229016171994102, guid: 3b7a0056e415e4340afe10f9d50024e5,
+        type: 3}
+    - target: {fileID: 646049809, guid: 472845f585d35674988f56d98ef79969, type: 3}
+      propertyPath: organicWall.cost
+      value: 300
+      objectReference: {fileID: 0}
+    - target: {fileID: 646049809, guid: 472845f585d35674988f56d98ef79969, type: 3}
+      propertyPath: organicWall.defenseUnit
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 646049809, guid: 472845f585d35674988f56d98ef79969, type: 3}
+      propertyPath: organicWall.range
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 646049809, guid: 472845f585d35674988f56d98ef79969, type: 3}
+      propertyPath: moltenWall.prefab
+      value: 
+      objectReference: {fileID: 3360369710635589951, guid: 0b6cc722fe9893c4198a836d5a88aa5c,
+        type: 3}
+    - target: {fileID: 646049809, guid: 472845f585d35674988f56d98ef79969, type: 3}
+      propertyPath: moltenWall.cost
+      value: 400
+      objectReference: {fileID: 0}
+    - target: {fileID: 646049809, guid: 472845f585d35674988f56d98ef79969, type: 3}
+      propertyPath: moltenWall.defenseUnit
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 646049809, guid: 472845f585d35674988f56d98ef79969, type: 3}
+      propertyPath: moltenWall.range
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 646049809, guid: 472845f585d35674988f56d98ef79969, type: 3}
+      propertyPath: mirrorWall.prefab
+      value: 
+      objectReference: {fileID: 8636474372257739693, guid: 5244486d39837df46b906267418cb7ae,
+        type: 3}
+    - target: {fileID: 646049809, guid: 472845f585d35674988f56d98ef79969, type: 3}
+      propertyPath: mirrorWall.cost
+      value: 1000
+      objectReference: {fileID: 0}
+    - target: {fileID: 646049809, guid: 472845f585d35674988f56d98ef79969, type: 3}
+      propertyPath: mirrorWall.defenseUnit
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 646049809, guid: 472845f585d35674988f56d98ef79969, type: 3}
+      propertyPath: mirrorWall.range
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 6279557666307883431, guid: 472845f585d35674988f56d98ef79969,
         type: 3}
@@ -8620,6 +8676,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Tiles.Array.data[219].second.m_ColliderType
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8790178746003312720, guid: 17bb6403c4d7d804899fd2d745f67b2a,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 17bb6403c4d7d804899fd2d745f67b2a, type: 3}

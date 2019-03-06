@@ -131,6 +131,10 @@ public class AttackEntity : Entity
             {
                 entity.TakeStatus(packet.status);
             }
+            if (entity.unit.canReflect)
+            {
+                CreateDamage(this);
+            }
             entity.TakeDamage(packet.damage);
         }
     }

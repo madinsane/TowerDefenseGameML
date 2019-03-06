@@ -10,6 +10,25 @@ public class Entity : MonoBehaviour
     protected void Start()
     {
         unit.InitHealth();
+        if (unit.regenPercent > 0)
+        {
+            StartCoroutine(Regeneration());
+        }
+    }
+
+    IEnumerator Regeneration()
+    {
+        float regenAmount;
+        while(unit.Health > 0)
+        {
+            if (unit.Health < unit.maxHealth)
+            {
+                regenAmount = (unit.regenPercent / 100) * unit.maxHealth;
+                unit.Health += regenAmount;
+                unit.healthBar.fillAmount = (unit.Health / unit.maxHealth);
+            }
+            yield return new WaitForSeconds(0.1f);
+        }
     }
 
     // Update is called once per frame

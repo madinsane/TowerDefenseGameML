@@ -34,6 +34,8 @@ public class Unit
     public float maxHealth = 100;
     public float statusResist = 0f;
     public Damage.Resist resists;
+    public float regenPercent = 0f;
+    public bool canReflect = false;
 
     [Header("Movement")]
     public float speed = 10f;

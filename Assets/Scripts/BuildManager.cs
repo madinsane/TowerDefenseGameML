@@ -19,7 +19,9 @@ public class BuildManager : MonoBehaviour
     public StructureShopData lightningSpire;
     public StructureShopData plague;
 
-    public StructureShopData baseWall;
+    public StructureShopData organicWall;
+    public StructureShopData moltenWall;
+    public StructureShopData mirrorWall;
 
     [Header("Units")]
     public Summon baseUnit;
