@@ -20,7 +20,7 @@ public class Structure : AttackEntity
     {
         base.Start();
         unit.InitStructure();
-        rangeLine = rangeIndicator.DrawCircle(unit.range / 2, 0.1f, rangeMaterial);
+        rangeLine = rangeIndicator.DrawCircle(unit.range / BuildManager.instance.GetTurretToBuild().scale, 0.1f, rangeMaterial);
         rangeLine.enabled = false;
         optionCanvasPrefab.SetActive(false);
     }

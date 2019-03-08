@@ -20,6 +20,7 @@ public class StructureShopData
     //public int value = 50;
     //public Image healthBar;
     public float range = 5f;
+    public float scale = 2f;
 
     //public void InitHealth()
     //{

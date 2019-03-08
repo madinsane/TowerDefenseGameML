@@ -89,11 +89,14 @@ public class Build : MonoBehaviour
 
             point.z = Camera.main.transform.position.z;
             RaycastHit2D hit = Physics2D.Raycast(point, Vector2.zero);
-
             bool canBuild = true;
+            if (point.x >= BuildManager.instance.barrier.position.x)
+            {
+                canBuild = false;
+            }
             if (hit.collider != null)
             {
-
+                
                 if (hit.collider.tag == "TileBase")
                 {
                     point.Set(point.x, point.y, 0);
@@ -144,7 +147,11 @@ public class Build : MonoBehaviour
             RaycastHit2D hit = Physics2D.Raycast(point, Vector2.zero);
 
             bool canBuild = true;
-            if (hit.collider != null)
+            if (point.x >= BuildManager.instance.barrier.position.x)
+            {
+                canBuild = false;
+            }
+            else if (hit.collider != null)
             {
                 
                 if (hit.collider.tag == "TileBase")
@@ -170,6 +177,7 @@ public class Build : MonoBehaviour
             if (!canBuild)
             {
                 Debug.Log("Can't build there");
+                BuildManager.instance.shopText.text = "Can't build there";
             }
         }
     }
@@ -180,10 +188,10 @@ public class Build : MonoBehaviour
         {
             if (rangeLine == null)
             {
-                rangeLine = rangeIndicator.DrawCircle(BuildManager.instance.GetTurretToBuild().range / 2, 0.1f, rangeMaterial);
+                rangeLine = rangeIndicator.DrawCircle(BuildManager.instance.GetTurretToBuild().range / BuildManager.instance.GetTurretToBuild().scale, 0.1f, rangeMaterial);
             } else
             {
-                rangeLine = rangeIndicator.DrawCircle(BuildManager.instance.GetTurretToBuild().range / 2, 0.1f, rangeMaterial, rangeLine);
+                rangeLine = rangeIndicator.DrawCircle(BuildManager.instance.GetTurretToBuild().range / BuildManager.instance.GetTurretToBuild().scale, 0.1f, rangeMaterial, rangeLine);
                 rangeLine.enabled = true;
             }
         }

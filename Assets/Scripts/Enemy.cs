@@ -18,6 +18,7 @@ public class Enemy : AttackEntity
     new void Start()
     {
         base.Start();
+        agent.updateRotation = false;
         opponentTag = "Structure";
         agent.updateRotation = false;
         agent.updateUpAxis = false;
@@ -102,6 +103,16 @@ public class Enemy : AttackEntity
     void Move()
     {
         agent.SetDestination(target.transform.position);
+
+        if (agent.velocity.sqrMagnitude > Mathf.Epsilon)
+        {
+            //transform.rotation = Quaternion.LookRotation(agent.velocity.normalized);
+            Vector3 dir = agent.velocity.normalized;
+            float rot_z = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
+            Quaternion toRotation = Quaternion.Euler(0f, 0f, rot_z - 90);
+            transform.rotation = Quaternion.Lerp(transform.rotation, toRotation, Time.deltaTime * 2f);
+        }
         agent.speed = unit.speed;
     }
+
 }

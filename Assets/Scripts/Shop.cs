@@ -219,8 +219,23 @@ public class Shop : MonoBehaviour
         int cost = 0;
         switch (name)
         {
-            case "Enemy":
-                cost = buildManager.baseUnit.cost;
+            case "Grunt":
+                cost = buildManager.grunt.cost;
+                break;
+            case "Wisp":
+                cost = buildManager.wisp.cost;
+                break;
+            case "Volatile":
+                cost = buildManager.volatileSpiderling.cost;
+                break;
+            case "Catapult":
+                cost = buildManager.catapult.cost;
+                break;
+            case "Drake":
+                cost = buildManager.drake.cost;
+                break;
+            case "Goliath":
+                cost = buildManager.goliath.cost;
                 break;
             default:
                 Debug.Log("Unit not found");
@@ -233,9 +248,29 @@ public class Shop : MonoBehaviour
     {
         switch (name)
         {
-            case "Enemy":
-                Debug.Log("Enemy selected");
-                buildManager.SummonUnit(buildManager.baseUnit);
+            case "Grunt":
+                Debug.Log("Grunt selected");
+                buildManager.SummonUnit(buildManager.grunt);
+                break;
+            case "Wisp":
+                Debug.Log("Wisp selected");
+                buildManager.SummonUnit(buildManager.wisp);
+                break;
+            case "Volatile":
+                Debug.Log("Volatile Spiderling selected");
+                buildManager.SummonUnit(buildManager.volatileSpiderling);
+                break;
+            case "Catapult":
+                Debug.Log("Catapult selected");
+                buildManager.SummonUnit(buildManager.catapult);
+                break;
+            case "Drake":
+                Debug.Log("Drake selected");
+                buildManager.SummonUnit(buildManager.drake);
+                break;
+            case "Goliath":
+                Debug.Log("Goliath selected");
+                buildManager.SummonUnit(buildManager.goliath);
                 break;
             default:
                 Debug.Log("Unit not found");

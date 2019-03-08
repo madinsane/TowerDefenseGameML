@@ -1,0 +1,156 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &6279557666307883430
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6279557666307883428}
+  - component: {fileID: 6279557666307883431}
+  - component: {fileID: 646049809}
+  - component: {fileID: 1403358455}
+  m_Layer: 0
+  m_Name: GameMaster
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6279557666307883428
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6279557666307883430}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -1.2733891, y: 0.64141357, z: -34.992813}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6279557666307883431
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6279557666307883430}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dcb8d75e718a0ab43a8de72503c1dcb0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemySetPrefab: {fileID: 5779321686696406211, guid: aca06c7a0e5a1a34c9a7585160bea44a,
+    type: 3}
+  spawnPoint: {fileID: 0}
+  enemyDelay: 0.5
+  valuePerWave: 25
+  baseValue: 0
+  waveText: {fileID: 0}
+  timeBetweenWaves: 2.5
+--- !u!114 &646049809
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6279557666307883430}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8d0afb75d55de1146b61477699b6aafa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  placementPrefab: {fileID: 0}
+  spawnPoint: {fileID: 0}
+  shopText: {fileID: 0}
+  ballista:
+    prefab: {fileID: 7798812412441945243, guid: 28af48c4e4c83e34a92d86756b4cabe4,
+      type: 3}
+    cost: 200
+    defenseUnit: 5
+    range: 7
+  flameblast:
+    prefab: {fileID: 1889151354, guid: af0185c4be902114faa5115ec5329cac, type: 3}
+    cost: 250
+    defenseUnit: 5
+    range: 4
+  frostbeam:
+    prefab: {fileID: 817551037, guid: a3949a7914892ff4ab290ae34574629a, type: 3}
+    cost: 300
+    defenseUnit: 6
+    range: 8
+  lightningSpire:
+    prefab: {fileID: 804323817376423654, guid: 446b9a59fb5b13b42a9ff5f334402594, type: 3}
+    cost: 600
+    defenseUnit: 10
+    range: 12
+  plague:
+    prefab: {fileID: 6498289281491901419, guid: 5be528e5cbfbd094387425b1cc2e4f35,
+      type: 3}
+    cost: 350
+    defenseUnit: 8
+    range: 4
+  organicWall:
+    prefab: {fileID: 6556229016171994102, guid: 3b7a0056e415e4340afe10f9d50024e5,
+      type: 3}
+    cost: 300
+    defenseUnit: 5
+    range: 2
+  moltenWall:
+    prefab: {fileID: 3360369710635589951, guid: 0b6cc722fe9893c4198a836d5a88aa5c,
+      type: 3}
+    cost: 400
+    defenseUnit: 7
+    range: 2
+  mirrorWall:
+    prefab: {fileID: 8636474372257739693, guid: 5244486d39837df46b906267418cb7ae,
+      type: 3}
+    cost: 1000
+    defenseUnit: 10
+    range: 2
+  grunt:
+    prefab: {fileID: 7871462881396943208, guid: d80e433b10d16c448a4ea2c10ccc0720,
+      type: 3}
+    cost: 200
+  wisp:
+    prefab: {fileID: 6199059462501179466, guid: fe2f8763018d814428467fe7acd94945,
+      type: 3}
+    cost: 300
+  volatileSpiderling:
+    prefab: {fileID: 6199059462501179466, guid: 735d55ea21e4cd644a9aea2e5c372289,
+      type: 3}
+    cost: 200
+  goliath:
+    prefab: {fileID: 6199059462501179466, guid: a0c74a78241dbd84dab25d56aa45a535,
+      type: 3}
+    cost: 2500
+  catapult:
+    prefab: {fileID: 6199059462501179466, guid: 18a7fb2a119f89340a018a6c1597c71e,
+      type: 3}
+    cost: 500
+  drake:
+    prefab: {fileID: 6199059462501179466, guid: 3904fbe821885c74cacd6898e2e44bbd,
+      type: 3}
+    cost: 600
+--- !u!114 &1403358455
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6279557666307883430}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a456bf7a243946d458c35347f56c43b7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  startGold: 1000
+  startFood: 10000
+  goldPerTick: 5
+  foodPerTick: 1
+  defenseUnitMax: 80

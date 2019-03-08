@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class BuildManager : MonoBehaviour
 {
@@ -11,6 +12,8 @@ public class BuildManager : MonoBehaviour
     [Header("Setup")]
     public GameObject placementPrefab;
     public Transform spawnPoint;
+    public Text shopText;
+    public Transform barrier;
 
     [Header("Structures")]
     public StructureShopData ballista;
@@ -24,7 +27,12 @@ public class BuildManager : MonoBehaviour
     public StructureShopData mirrorWall;
 
     [Header("Units")]
-    public Summon baseUnit;
+    public Summon grunt;
+    public Summon wisp;
+    public Summon volatileSpiderling;
+    public Summon goliath;
+    public Summon catapult;
+    public Summon drake;
 
     public bool IsPlacing { get; set; }
     public string CurrentTurret { get; set; }
@@ -65,10 +73,12 @@ public class BuildManager : MonoBehaviour
             if (StatManager.Gold < turretToBuild.cost)
             {
                 Debug.Log("Not enough gold");
+                shopText.text = "Not enough gold";
                 return;
             } else if (StatManager.DefenseUnit + turretToBuild.defenseUnit > StatManager.DefenseUnitMax)
             {
                 Debug.Log("Not enough defense units");
+                shopText.text = "Not enough defense units";
                 return;
             }
             StatManager.Gold -= turretToBuild.cost;
@@ -84,6 +94,7 @@ public class BuildManager : MonoBehaviour
         if (StatManager.Food < unit.cost)
         {
             Debug.Log("Not enough food");
+            shopText.text = "Not enough food";
             return;
         }
         StatManager.Food -= unit.cost;
@@ -98,6 +109,7 @@ public class BuildManager : MonoBehaviour
         else
             spriteRenderer.color = Color.red;
         AlphaPreview();
+        placementPrefab.transform.localScale = new Vector3(turretToBuild.scale, turretToBuild.scale, 0);
     }
 
     private void AlphaPreview()
@@ -105,6 +117,7 @@ public class BuildManager : MonoBehaviour
         Color tmp = spriteRenderer.color;
         tmp.a = 0.75f;
         spriteRenderer.color = tmp;
+        
     }
 
     public void DisablePreview()

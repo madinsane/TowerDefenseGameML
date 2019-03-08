@@ -70,6 +70,8 @@ public class AttackEntity : Entity
                 {
                     CreateDamage(target.gameObject.GetComponent<Entity>());
                 }
+                GameObject effect = Instantiate(unit.impactEffect, target.position, transform.rotation);
+                effect.transform.eulerAngles = new Vector3(transform.rotation.eulerAngles.z - 90, 0, 0);
             } else
             {
                 Shoot();
@@ -78,8 +80,6 @@ public class AttackEntity : Entity
             {
                 Kill();
             }
-            GameObject effect = Instantiate(unit.impactEffect, transform.position, transform.rotation);
-            effect.transform.eulerAngles = new Vector3(-90f, 0, 0);
         }
     }
 
