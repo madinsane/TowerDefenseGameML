@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class WaveSpawner : MonoBehaviour
 {
     public static int EnemiesAlive { get; set; }
+    public static int OpponentEnemiesAlive { get; set; }
 
     [Header("Enemies")]
     public GameObject enemySetPrefab;
@@ -16,6 +17,7 @@ public class WaveSpawner : MonoBehaviour
     public int valuePerWave = 25;
     public int baseValue = 0;
     public Text waveText;
+    public bool playerSpawner = true;
 
     public float timeBetweenWaves = 5f;
     private float countdown = 2f;
@@ -41,10 +43,20 @@ public class WaveSpawner : MonoBehaviour
             StartCoroutine(SpawnWave());
             countdown = timeBetweenWaves;
         }
-        if (EnemiesAlive <= 0)
+        if (playerSpawner)
         {
-            countdown -= Time.deltaTime;
-            EnemiesAlive = 0;
+            if (EnemiesAlive <= 0)
+            {
+                countdown -= Time.deltaTime;
+                EnemiesAlive = 0;
+            }
+        } else
+        {
+            if (OpponentEnemiesAlive <= 0)
+            {
+                countdown -= Time.deltaTime;
+                OpponentEnemiesAlive = 0;
+            }
         }
     }
 
@@ -115,7 +127,14 @@ public class WaveSpawner : MonoBehaviour
     void SpawnEnemy(int index)
     {
         Enemy enemy = Instantiate(enemies[index], spawnPoint.position, spawnPoint.rotation).GetComponent<Enemy>();
-        EnemiesAlive++;
+        if (playerSpawner)
+        {
+            EnemiesAlive++;
+        } else
+        {
+            OpponentEnemiesAlive++;
+        }
         enemy.PartOfWave = true;
+        enemy.PlayerOwned = playerSpawner;
     }
 }

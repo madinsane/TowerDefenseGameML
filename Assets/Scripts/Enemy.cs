@@ -11,6 +11,7 @@ public class Enemy : AttackEntity
     private bool hasAttacked = false;
     public bool PartOfWave { get; set; }
     public Transform TauntTarget { get; set; }
+    public bool PlayerOwned { get; set; }
 
     public NavMeshAgent agent;
     public NavMeshSurface2d navMesh;
@@ -35,8 +36,15 @@ public class Enemy : AttackEntity
     void PickCore()
     {
         System.Random random = new System.Random();
-        int core = random.Next(0, Waypoint.points.Count);
-        targetWP = Waypoint.points[core];
+        if (PlayerOwned)
+        {
+            int core = random.Next(0, Waypoint.points.Count);
+            targetWP = Waypoint.points[core];
+        } else
+        {
+            int core = random.Next(0, Waypoint.opponentPoints.Count);
+            targetWP = Waypoint.opponentPoints[core];
+        } 
     }
 
     void Update()
@@ -96,7 +104,13 @@ public class Enemy : AttackEntity
         StatManager.Gold += unit.baseValue;
         StatManager.Score += unit.baseValue;
         StatManager.Food += unit.baseValue / 5;
-        WaveSpawner.EnemiesAlive--;
+        if (PlayerOwned)
+        {
+            WaveSpawner.EnemiesAlive--;
+        } else
+        {
+            WaveSpawner.OpponentEnemiesAlive--;
+        }
         Destroy(gameObject);
     }
 

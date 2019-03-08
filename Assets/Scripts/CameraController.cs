@@ -5,11 +5,12 @@ using UnityEngine;
 public class CameraController : MonoBehaviour
 {
     public bool doMovement = true;
-    public float panSpeed = 3f;
+    public float panSpeed = 10f;
     public float panBorderMultiplier = 0.0025f;
 
     public float zoomSpeed = 1;
     private float targetOrtho;
+    private Vector3 targetPosition;
     public float smoothSpeed = 2.0f;
     public float minOrtho = 1.0f;
     public float maxOrtho = 20.0f;
@@ -48,7 +49,7 @@ public class CameraController : MonoBehaviour
         Camera.main.orthographicSize = Mathf.MoveTowards(Camera.main.orthographicSize, targetOrtho, smoothSpeed * Time.deltaTime);
         if (Input.GetKey("space"))
         {
-            transform.position = new Vector3(0, 0, -10);
+            transform.position = targetPosition;
             
         }
     }
@@ -57,5 +58,6 @@ public class CameraController : MonoBehaviour
     void Start()
     {
         targetOrtho = Camera.main.orthographicSize;
+        targetPosition = Camera.main.transform.position;
     }
 }
