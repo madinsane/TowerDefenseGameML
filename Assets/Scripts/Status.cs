@@ -16,8 +16,8 @@ public static class Status
     }
 
     public const float shockDefenseMultiplier = 1.5f;
-    public const float chillMovespeedMultiplier = 0.5f;
-    public const float chillAttackspeedMultiplier = 0.5f;
+    public const float chillMovespeedMultiplier = 0.75f;
+    public const float chillAttackspeedMultiplier = 0.75f;
     public const float freezeMovespeedMultiplier = 0f;
     public const float freezeAttackspeedMultiplier = 0f;
     public const float curseDamageMultiplier = 0.5f;

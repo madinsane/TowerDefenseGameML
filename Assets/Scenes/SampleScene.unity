@@ -506,7 +506,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 588883946, guid: ea0df9023a87ed344902773b71985e4f, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0.000015258789
+      value: 0.00005340576
       objectReference: {fileID: 0}
     - target: {fileID: 1543843472, guid: ea0df9023a87ed344902773b71985e4f, type: 3}
       propertyPath: m_AnchorMax.x
@@ -984,6 +984,67 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: eb5633e74dcf28f439975e3eb56e373b, type: 3}
+--- !u!1 &1916077765
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1916077767}
+  - component: {fileID: 1916077766}
+  m_Layer: 0
+  m_Name: Academy
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1916077766
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1916077765}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa8939cc33793b14ca18b381f8218e3b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  broadcastHub:
+    broadcastingBrains: []
+    _brainsToControl: []
+  maxSteps: 0
+  trainingConfiguration:
+    width: 80
+    height: 80
+    qualityLevel: 1
+    timeScale: 100
+    targetFrameRate: -1
+  inferenceConfiguration:
+    width: 1280
+    height: 720
+    qualityLevel: 5
+    timeScale: 1
+    targetFrameRate: 60
+  resetParameters:
+    resetParameters: []
+--- !u!4 &1916077767
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1916077765}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1.1408076, y: -3.6623383, z: 28.217272}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 15
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1948509424
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1434,7 +1495,7 @@ PrefabInstance:
     - target: {fileID: 2108370971044855177, guid: fa21ea47ec0835d428be351377307a7f,
         type: 3}
       propertyPath: doMovement
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2108370971044855177, guid: fa21ea47ec0835d428be351377307a7f,
         type: 3}
@@ -2130,6 +2191,26 @@ PrefabInstance:
       propertyPath: barrier
       value: 
       objectReference: {fileID: 536705616793430959}
+    - target: {fileID: 646049809, guid: 472845f585d35674988f56d98ef79969, type: 3}
+      propertyPath: ballista.range
+      value: 9.75
+      objectReference: {fileID: 0}
+    - target: {fileID: 646049809, guid: 472845f585d35674988f56d98ef79969, type: 3}
+      propertyPath: flameblast.range
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 646049809, guid: 472845f585d35674988f56d98ef79969, type: 3}
+      propertyPath: plague.range
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 646049809, guid: 472845f585d35674988f56d98ef79969, type: 3}
+      propertyPath: frostbeam.range
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 646049809, guid: 472845f585d35674988f56d98ef79969, type: 3}
+      propertyPath: lightningSpire.range
+      value: 24
+      objectReference: {fileID: 0}
     - target: {fileID: 6279557666307883431, guid: 472845f585d35674988f56d98ef79969,
         type: 3}
       propertyPath: spawnPoint
@@ -2140,6 +2221,14 @@ PrefabInstance:
       propertyPath: waveText
       value: 
       objectReference: {fileID: 535188543}
+    - target: {fileID: 1403358455, guid: 472845f585d35674988f56d98ef79969, type: 3}
+      propertyPath: defenseUnitMax
+      value: 150
+      objectReference: {fileID: 0}
+    - target: {fileID: 1403358455, guid: 472845f585d35674988f56d98ef79969, type: 3}
+      propertyPath: startGold
+      value: 1250
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 472845f585d35674988f56d98ef79969, type: 3}
 --- !u!1001 &7013094092239747000

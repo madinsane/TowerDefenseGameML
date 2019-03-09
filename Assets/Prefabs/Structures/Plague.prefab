@@ -1663,7 +1663,7 @@ MonoBehaviour:
   unit:
     isMelee: 1
     damage: 100
-    range: 4
+    range: 6
     attackRate: 100
     isSuicide: 0
     areaOfEffect: 1.5
@@ -1677,14 +1677,14 @@ MonoBehaviour:
     bulletPrefab: {fileID: 4956445324695260610, guid: 83c343927c369aa47aee7a7bdde900ff,
       type: 3}
     firePoint: {fileID: 7530084045265735267}
-    maxHealth: 250
+    maxHealth: 650
     statusResist: 0
     resists:
       physResist: 0
       lightningResist: 0
       coldResist: 0
-      fireResist: 0
-      chaosResist: 0
+      fireResist: -0.3
+      chaosResist: 0.6
       meleeResist: 0
       rangedResist: 0
       siegeResist: 0
@@ -1700,14 +1700,14 @@ MonoBehaviour:
     baseValue: 125
     healthBar: {fileID: 3678837908535650535}
     upgradeIcons: {fileID: 3174034495192014404}
-    aggroRange: 4
+    aggroRange: 6
     impactEffect: {fileID: 0}
     name: 
   opponentTag: Enemy
   rangeIndicator: {fileID: 5113702503403186949}
   rangeMaterial: {fileID: 2100000, guid: 2066bcef515c383419d368ac0395d294, type: 2}
   optionCanvasPrefab: {fileID: 2165191174205136097}
-  range: 4
+  range: 6
   useLaser: 0
   lineRenderer: {fileID: 0}
   laserDamage: 1

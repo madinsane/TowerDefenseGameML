@@ -118,19 +118,27 @@ public static class Damage
                 sourceDefense = 0;
                 break;
         }
-        return typeDefense * sourceDefense;
+        float defense = typeDefense + sourceDefense;
+        if (defense > 1)
+            defense = 1;
+        return defense;
     }
 
     public static DOT CalculateDot(Type _type, float incDamage, float defense, float maxHealth)
     {
         float damage = incDamage * (1 - defense);
-        int damagePercent = (int)Mathf.Floor(damage / maxHealth) * 100;
-        float durationSeconds = damagePercent * Status.durationPerPercent;
+        //int damagePercent = (int)Mathf.Floor((damage / maxHealth) * 100);
+        /*float durationSeconds = damagePercent * Status.durationPerPercent;
+        if (durationSeconds < Status.durationPerPercent)
+        {
+            durationSeconds = Status.durationPerPercent * 5;
+        }*/
+        float durationSeconds = 3;
         //int frameDuration = (int)Mathf.Floor(durationSeconds * 60);
         return new DOT
         {
             type = _type,
-            damagePerTick = damage / durationSeconds,
+            damagePerTick = damage / (durationSeconds / Status.durationPerPercent),
             duration = durationSeconds
         };
     }

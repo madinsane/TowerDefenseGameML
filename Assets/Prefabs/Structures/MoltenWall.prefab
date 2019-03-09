@@ -874,14 +874,14 @@ MonoBehaviour:
     maxHealth: 2500
     statusResist: 0
     resists:
-      physResist: 0
+      physResist: 0.6
       lightningResist: 0
       coldResist: 0
-      fireResist: 0
-      chaosResist: 0
+      fireResist: 0.5
+      chaosResist: 0.7
       meleeResist: 0
       rangedResist: 0
-      siegeResist: 0
+      siegeResist: -0.6
     regenPercent: 0
     canReflect: 0
     speed: 10
@@ -906,6 +906,7 @@ MonoBehaviour:
     cost: 100
     defenseUnit: 6
     range: 2
+    scale: 2
 --- !u!1 &4015303793631827902
 GameObject:
   m_ObjectHideFlags: 0

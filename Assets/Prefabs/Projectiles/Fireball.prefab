@@ -93,7 +93,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   projectileData:
-    damage: 20
+    damage: 30
     speed: 0.1
     homing: 1
     explosionRadius: 1
@@ -104,3 +104,6 @@ MonoBehaviour:
     critChance: 10
     statusChance: 0
     isPureStatus: 0
+    isPureDOT: 0
+    isPiercing: 0
+    lifeTime: 1

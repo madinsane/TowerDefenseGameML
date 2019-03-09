@@ -193,14 +193,14 @@ MonoBehaviour:
       physResist: 0
       lightningResist: 0
       coldResist: 0
-      fireResist: 0
-      chaosResist: 0
+      fireResist: -0.3
+      chaosResist: 0.6
       meleeResist: 0
       rangedResist: 0
       siegeResist: 0
     regenPercent: 0
     canReflect: 0
-    speed: 0.4
+    speed: 0.5
     isFlying: 0
     damageUpFactor: 0.25
     healthUpFactor: 0.5
@@ -210,7 +210,7 @@ MonoBehaviour:
     baseValue: 150
     healthBar: {fileID: 2561644569823394508}
     upgradeIcons: {fileID: 0}
-    aggroRange: 2
+    aggroRange: 6
     impactEffect: {fileID: 2643392415952849565, guid: 33f5d26be6cfa5f439619bfa6ef1f2c8,
       type: 3}
     name: Catapult
@@ -241,7 +241,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.64, y: 0.64}
+  m_Size: {x: 0.32, y: 0.32}
   m_EdgeRadius: 0
 --- !u!50 &1045401718954558367
 Rigidbody2D:
@@ -273,7 +273,7 @@ NavMeshAgent:
   m_GameObject: {fileID: 6199059462501179466}
   m_Enabled: 1
   m_AgentTypeID: 0
-  m_Radius: 0.32
+  m_Radius: 0.16
   m_Speed: 3.5
   m_Acceleration: 8
   avoidancePriority: 50
@@ -282,8 +282,8 @@ NavMeshAgent:
   m_AutoTraverseOffMeshLink: 1
   m_AutoBraking: 1
   m_AutoRepath: 1
-  m_Height: 0.64
-  m_BaseOffset: 0.32
+  m_Height: 0.32
+  m_BaseOffset: 0.16
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
 --- !u!1 &7884582637799743083

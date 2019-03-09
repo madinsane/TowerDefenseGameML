@@ -93,7 +93,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   projectileData:
-    damage: 200
+    damage: 250
     speed: 0.05
     homing: 1
     explosionRadius: 1.5

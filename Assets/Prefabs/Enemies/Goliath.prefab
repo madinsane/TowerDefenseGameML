@@ -172,7 +172,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   unit:
     isMelee: 1
-    damage: 125
+    damage: 300
     range: 2
     attackRate: 100
     isSuicide: 0
@@ -187,20 +187,20 @@ MonoBehaviour:
     bulletPrefab: {fileID: 3539894598048087453, guid: fe5010a24d6d4764289561d0a2273cb6,
       type: 3}
     firePoint: {fileID: 2903005241131725487}
-    maxHealth: 5000
+    maxHealth: 7500
     statusResist: 0
     resists:
-      physResist: 0
+      physResist: 0.3
       lightningResist: 0
-      coldResist: 0
-      fireResist: 0
-      chaosResist: 0
+      coldResist: 0.3
+      fireResist: 0.3
+      chaosResist: -0.4
       meleeResist: 0
       rangedResist: 0
       siegeResist: 0
     regenPercent: 0
     canReflect: 0
-    speed: 1
+    speed: 1.2
     isFlying: 0
     damageUpFactor: 0.25
     healthUpFactor: 0.5
@@ -210,8 +210,8 @@ MonoBehaviour:
     baseValue: 1500
     healthBar: {fileID: 2561644569823394508}
     upgradeIcons: {fileID: 0}
-    aggroRange: 2
-    impactEffect: {fileID: 2643392415952849565, guid: 33f5d26be6cfa5f439619bfa6ef1f2c8,
+    aggroRange: 2.5
+    impactEffect: {fileID: 6501784217414075907, guid: 94c5ce9444fcee348ac5193cd5089683,
       type: 3}
     name: Goliath
   opponentTag: Structure
@@ -230,7 +230,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.0034496784, y: -0.12904}
+  m_Offset: {x: -0.024202943, y: -0.20646739}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -241,7 +241,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 2.0541434, y: 1.4183726}
+  m_Size: {x: 1.1582019, y: 0.7547126}
   m_EdgeRadius: 0
 --- !u!50 &1045401718954558367
 Rigidbody2D:
@@ -273,7 +273,7 @@ NavMeshAgent:
   m_GameObject: {fileID: 6199059462501179466}
   m_Enabled: 1
   m_AgentTypeID: 0
-  m_Radius: 1.15
+  m_Radius: 0.6
   m_Speed: 3.5
   m_Acceleration: 8
   avoidancePriority: 50
@@ -282,8 +282,8 @@ NavMeshAgent:
   m_AutoTraverseOffMeshLink: 1
   m_AutoBraking: 1
   m_AutoRepath: 1
-  m_Height: 1.55
-  m_BaseOffset: 0.9
+  m_Height: 0.7
+  m_BaseOffset: 0.45
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
 --- !u!1 &7884582637799743083

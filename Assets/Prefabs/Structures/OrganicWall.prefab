@@ -1901,7 +1901,7 @@ MonoBehaviour:
   unit:
     isMelee: 1
     damage: 10
-    range: 2
+    range: 4
     attackRate: 60
     isSuicide: 0
     areaOfEffect: 0
@@ -1914,18 +1914,18 @@ MonoBehaviour:
     targetAirOnly: 0
     bulletPrefab: {fileID: 0}
     firePoint: {fileID: 0}
-    maxHealth: 1000
+    maxHealth: 1500
     statusResist: 0
     resists:
-      physResist: 0
+      physResist: 0.3
       lightningResist: 0
       coldResist: 0
-      fireResist: 0
-      chaosResist: 0
-      meleeResist: 0
-      rangedResist: 0
-      siegeResist: 0
-    regenPercent: 0.35
+      fireResist: -0.3
+      chaosResist: -0.3
+      meleeResist: 0.1
+      rangedResist: 0.1
+      siegeResist: -0.5
+    regenPercent: 0.1
     canReflect: 0
     speed: 10
     isFlying: 0

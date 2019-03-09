@@ -173,7 +173,7 @@ MonoBehaviour:
   unit:
     isMelee: 0
     damage: 35
-    range: 2.5
+    range: 2.25
     attackRate: 40
     isSuicide: 0
     areaOfEffect: 0
@@ -187,13 +187,13 @@ MonoBehaviour:
     bulletPrefab: {fileID: 499986923144360167, guid: a3a4f30340bf1014fad593987e04ce7a,
       type: 3}
     firePoint: {fileID: 2903005241131725487}
-    maxHealth: 1000
+    maxHealth: 1250
     statusResist: 0
     resists:
-      physResist: 0
-      lightningResist: 0
+      physResist: 0.4
+      lightningResist: -0.3
       coldResist: 0
-      fireResist: 0
+      fireResist: 0.6
       chaosResist: 0
       meleeResist: 0
       rangedResist: 0
@@ -210,7 +210,7 @@ MonoBehaviour:
     baseValue: 200
     healthBar: {fileID: 2561644569823394508}
     upgradeIcons: {fileID: 0}
-    aggroRange: 2.75
+    aggroRange: 2.25
     impactEffect: {fileID: 2643392415952849565, guid: 33f5d26be6cfa5f439619bfa6ef1f2c8,
       type: 3}
     name: Drake
@@ -241,7 +241,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.64, y: 0.64}
+  m_Size: {x: 0.32, y: 0.32}
   m_EdgeRadius: 0
 --- !u!50 &1045401718954558367
 Rigidbody2D:
@@ -273,7 +273,7 @@ NavMeshAgent:
   m_GameObject: {fileID: 6199059462501179466}
   m_Enabled: 1
   m_AgentTypeID: -1372625422
-  m_Radius: 0.32
+  m_Radius: 0.16
   m_Speed: 3.5
   m_Acceleration: 8
   avoidancePriority: 50
@@ -282,8 +282,8 @@ NavMeshAgent:
   m_AutoTraverseOffMeshLink: 1
   m_AutoBraking: 1
   m_AutoRepath: 1
-  m_Height: 0.64
-  m_BaseOffset: 0.32
+  m_Height: 0.32
+  m_BaseOffset: 0.16
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
 --- !u!1 &7884582637799743083

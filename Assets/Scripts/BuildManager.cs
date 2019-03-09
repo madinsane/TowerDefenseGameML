@@ -99,7 +99,8 @@ public class BuildManager : MonoBehaviour
         }
         StatManager.Food -= unit.cost;
         StatManager.Score += unit.cost;
-        Instantiate(unit.prefab, spawnPoint.position, Quaternion.identity);
+        Enemy enemy = Instantiate(unit.prefab, spawnPoint.position, Quaternion.identity).GetComponent<Enemy>();
+        enemy.PlayerOwned = true;
     }
 
     public void ColorPreview(bool canBuild)

@@ -66,7 +66,7 @@ public class Entity : MonoBehaviour
                 unit.resists.chaosResist /= Status.shockDefenseMultiplier;
                 break;
             case Status.Type.Chill:
-                unit.speed *= Status.chillMovespeedMultiplier;
+                unit.speed *= (Status.chillMovespeedMultiplier);
                 unit.attackRate = Mathf.FloorToInt(unit.attackRate / Status.chillAttackspeedMultiplier);
                 break;
             case Status.Type.Freeze:
@@ -100,12 +100,12 @@ public class Entity : MonoBehaviour
     {
         for (int i = 0; i < (dot.duration / 0.1f); i++)
         {
-            unit.healthBar.color = Color.magenta;
+            unit.healthBar.color = new Color(0.2f, 0, 0.2f);
             TakeDamage(dot.damagePerTick);
             yield return new WaitForSeconds(0.1f);
 
         }
-        unit.healthBar.color = new Color(0, 255, 5);
+        unit.healthBar.color = new Color(0, 255, 0);
     }
 
     public virtual void Kill()

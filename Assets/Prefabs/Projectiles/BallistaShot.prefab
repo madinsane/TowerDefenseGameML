@@ -93,8 +93,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   projectileData:
-    damage: 20
-    speed: 0.1
+    damage: 25
+    speed: 0.15
     homing: 0
     explosionRadius: 0.1
     impactEffect: {fileID: 7687255503685256080, guid: eaeacef6228f9584c972df12485a77ce,
@@ -104,5 +104,6 @@ MonoBehaviour:
     critChance: 25
     statusChance: 0
     isPureStatus: 0
+    isPureDOT: 0
     isPiercing: 1
-    lifeTime: 1
+    lifeTime: 2.5
