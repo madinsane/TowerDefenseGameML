@@ -25,6 +25,12 @@ public class Waypoint : MonoBehaviour
         }
     }
 
+    public void Restart()
+    {
+        cores.GetComponentInChildren<Core>().Restart();
+        opponentCores.GetComponentInChildren<Core>().Restart();
+    }
+
     public void AddWaypoint(Transform point)
     {
         points.Add(point);

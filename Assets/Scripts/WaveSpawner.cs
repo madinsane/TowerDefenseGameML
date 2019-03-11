@@ -26,7 +26,7 @@ public class WaveSpawner : MonoBehaviour
     private int maxIterations;
     private SortedList<int, int> nextWave;
 
-    private int waveNumber = 1;
+    public int WaveNumber { get; set; } = 1;
 
     void Start()
     {
@@ -34,6 +34,12 @@ public class WaveSpawner : MonoBehaviour
         maxIterations = 20;
         nextWave = new SortedList<int, int>();
         PrepareWave();
+    }
+
+    public void Restart()
+    {
+        nextWave.Clear();
+        WaveNumber = 1;
     }
 
     void Update()
@@ -63,7 +69,7 @@ public class WaveSpawner : MonoBehaviour
     void PrepareWave()
     {
         
-        int currentValue = baseValue + (valuePerWave * waveNumber);
+        int currentValue = baseValue + (valuePerWave * WaveNumber);
         System.Random random = new System.Random();
         int index = 0;
         int enemyValue = 0;
@@ -72,7 +78,7 @@ public class WaveSpawner : MonoBehaviour
         {
             index = random.Next(0, enemies.Length);
             enemyValue = enemies[index].unit.baseValue;
-            if (enemyValue <= baseValue + (valuePerWave * waveNumber))
+            if (enemyValue <= baseValue + (valuePerWave * WaveNumber))
             {
                 currentValue -= enemyValue;
                 if (nextWave.ContainsKey(index))
@@ -119,7 +125,7 @@ public class WaveSpawner : MonoBehaviour
                 yield return new WaitForSeconds(enemyDelay);
             }
         }
-        waveNumber++;
+        WaveNumber++;
         nextWave.Clear();
         PrepareWave();
     }
@@ -136,5 +142,6 @@ public class WaveSpawner : MonoBehaviour
         }
         enemy.PartOfWave = true;
         enemy.PlayerOwned = playerSpawner;
+        enemy.WaveNumber = WaveNumber;
     }
 }

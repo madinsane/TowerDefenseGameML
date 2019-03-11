@@ -47,7 +47,11 @@ public class Build : MonoBehaviour
             {
                 if (hit.collider.tag == "Structure")
                 {
-                    hit.collider.gameObject.GetComponent<Structure>().IsSelected = true;
+                    Structure structure = hit.collider.gameObject.GetComponent<Structure>();
+                    if (structure.PlayerOwned)
+                    {
+                        structure.IsSelected = true;
+                    }
                 }
             }
             

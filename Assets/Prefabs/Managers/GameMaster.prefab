@@ -52,6 +52,7 @@ MonoBehaviour:
   valuePerWave: 25
   baseValue: 0
   waveText: {fileID: 0}
+  playerSpawner: 1
   timeBetweenWaves: 2.5
 --- !u!114 &646049809
 MonoBehaviour:
@@ -67,52 +68,62 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   placementPrefab: {fileID: 0}
   spawnPoint: {fileID: 0}
+  oppSpawnPoint: {fileID: 0}
   shopText: {fileID: 0}
+  barrier: {fileID: 0}
   ballista:
     prefab: {fileID: 7798812412441945243, guid: 28af48c4e4c83e34a92d86756b4cabe4,
       type: 3}
     cost: 200
     defenseUnit: 5
-    range: 7
+    range: 9.75
+    scale: 2
   flameblast:
     prefab: {fileID: 1889151354, guid: af0185c4be902114faa5115ec5329cac, type: 3}
     cost: 250
     defenseUnit: 5
-    range: 4
+    range: 6
+    scale: 2
   frostbeam:
     prefab: {fileID: 817551037, guid: a3949a7914892ff4ab290ae34574629a, type: 3}
     cost: 300
     defenseUnit: 6
-    range: 8
+    range: 12
+    scale: 2
   lightningSpire:
     prefab: {fileID: 804323817376423654, guid: 446b9a59fb5b13b42a9ff5f334402594, type: 3}
     cost: 600
     defenseUnit: 10
-    range: 12
+    range: 24
+    scale: 2
   plague:
     prefab: {fileID: 6498289281491901419, guid: 5be528e5cbfbd094387425b1cc2e4f35,
       type: 3}
     cost: 350
     defenseUnit: 8
-    range: 4
+    range: 6
+    scale: 2
   organicWall:
     prefab: {fileID: 6556229016171994102, guid: 3b7a0056e415e4340afe10f9d50024e5,
       type: 3}
-    cost: 300
-    defenseUnit: 5
-    range: 2
+    cost: 350
+    defenseUnit: 6
+    range: 4
+    scale: 3
   moltenWall:
     prefab: {fileID: 3360369710635589951, guid: 0b6cc722fe9893c4198a836d5a88aa5c,
       type: 3}
-    cost: 400
-    defenseUnit: 7
-    range: 2
+    cost: 350
+    defenseUnit: 6
+    range: 4
+    scale: 3
   mirrorWall:
     prefab: {fileID: 8636474372257739693, guid: 5244486d39837df46b906267418cb7ae,
       type: 3}
     cost: 1000
     defenseUnit: 10
-    range: 2
+    range: 4
+    scale: 3
   grunt:
     prefab: {fileID: 7871462881396943208, guid: d80e433b10d16c448a4ea2c10ccc0720,
       type: 3}
@@ -149,8 +160,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a456bf7a243946d458c35347f56c43b7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startGold: 1000
-  startFood: 10000
+  startGold: 1250
+  startFood: 250
   goldPerTick: 5
   foodPerTick: 1
-  defenseUnitMax: 80
+  defenseUnitMax: 100
+  startScore: 100000

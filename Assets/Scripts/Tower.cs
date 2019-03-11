@@ -8,7 +8,7 @@ public class Tower : Structure
 
     [Header("Bullet Attributes")]
     public float range = 5f;
-    private int fireCountdown = 0;
+    private float fireCountdown = 0;
 
     [Header("Laser Attributes")]
     public bool useLaser = false;
@@ -27,7 +27,7 @@ public class Tower : Structure
     {
         base.Start();
         opponentTag = "Enemy";
-        fireCountdown = unit.attackRate;
+        fireCountdown = unit.attackRate / 60f;
         if (useLaser)
         {
             lineRenderer.enabled = false;
@@ -89,9 +89,9 @@ public class Tower : Structure
         else if (fireCountdown <= 0)
         {
             Shoot();
-            fireCountdown = unit.attackRate;
+            fireCountdown = unit.attackRate / 60f;
         }
-        fireCountdown--;
+        fireCountdown -= Time.deltaTime;
     }
 
     void Laser()

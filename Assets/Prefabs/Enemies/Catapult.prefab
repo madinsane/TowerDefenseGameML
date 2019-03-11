@@ -173,7 +173,7 @@ MonoBehaviour:
   unit:
     isMelee: 0
     damage: 100
-    range: 6
+    range: 5.5
     attackRate: 100
     isSuicide: 0
     areaOfEffect: 0
@@ -207,7 +207,7 @@ MonoBehaviour:
     attackRateUpFactor: 0.1
     valueFactor: 0.5
     defenseUnit: 0
-    baseValue: 150
+    baseValue: 250
     healthBar: {fileID: 2561644569823394508}
     upgradeIcons: {fileID: 0}
     aggroRange: 6

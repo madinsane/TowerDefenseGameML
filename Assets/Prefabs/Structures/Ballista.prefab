@@ -165,8 +165,8 @@ MonoBehaviour:
     healthUpFactor: 0.5
     attackRateUpFactor: 0.1
     valueFactor: 0.5
-    defenseUnit: 2
-    baseValue: 50
+    defenseUnit: 5
+    baseValue: 100
     healthBar: {fileID: 376233230642799481}
     upgradeIcons: {fileID: 4540588270832175848}
     aggroRange: 10

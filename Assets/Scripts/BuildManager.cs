@@ -12,8 +12,11 @@ public class BuildManager : MonoBehaviour
     [Header("Setup")]
     public GameObject placementPrefab;
     public Transform spawnPoint;
+    public Transform oppSpawnPoint;
     public Text shopText;
     public Transform barrier;
+    public WaveSpawner playerWave;
+    public WaveSpawner oppWave;
 
     [Header("Structures")]
     public StructureShopData ballista;
@@ -89,6 +92,26 @@ public class BuildManager : MonoBehaviour
         }
     }
 
+    public (Structure, int) BuildStructureOpp(Vector3 position, StructureShopData structure)
+    {
+        if (StatManager.OpponentGold < structure.cost)
+        {
+            return (null, 1);
+        }
+        else if (StatManager.OpponentDefenseUnit + structure.defenseUnit > StatManager.DefenseUnitMax)
+        {
+            return (null, 2);
+        } else
+        {
+            StatManager.OpponentGold -= structure.cost;
+            StatManager.OpponentScore += structure.cost;
+            StatManager.OpponentDefenseUnit += structure.defenseUnit;
+            Structure newStructure = Instantiate(structure.prefab, position, Quaternion.identity).GetComponent<Structure>();
+            newStructure.PlayerOwned = false;
+            return (newStructure, 0);
+        }
+    }
+
     public void SummonUnit(Summon unit)
     {
         if (StatManager.Food < unit.cost)
@@ -99,8 +122,23 @@ public class BuildManager : MonoBehaviour
         }
         StatManager.Food -= unit.cost;
         StatManager.Score += unit.cost;
+        Enemy enemy = Instantiate(unit.prefab, oppSpawnPoint.position, Quaternion.identity).GetComponent<Enemy>();
+        enemy.PlayerOwned = false;
+        enemy.WaveNumber = oppWave.WaveNumber;
+    }
+
+    public int SummonUnitOpp(Summon unit)
+    {
+        if (StatManager.OpponentFood < unit.cost)
+        {
+            return 1;
+        }
+        StatManager.OpponentFood -= unit.cost;
+        StatManager.OpponentScore += unit.cost;
         Enemy enemy = Instantiate(unit.prefab, spawnPoint.position, Quaternion.identity).GetComponent<Enemy>();
         enemy.PlayerOwned = true;
+        enemy.WaveNumber = playerWave.WaveNumber;
+        return 0;
     }
 
     public void ColorPreview(bool canBuild)

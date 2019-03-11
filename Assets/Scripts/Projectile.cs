@@ -58,15 +58,18 @@ public class Projectile : MonoBehaviour
             Destroy(gameObject);
             return;
         }
-
+        
         if (projectileData.homing)
             dir = target.position - transform.position;
-        if (dir.magnitude <= projectileData.speed)
+        if (!projectileData.isPiercing)
         {
-            HitTarget();
-            return;
+            if (Vector3.SqrMagnitude(transform.position - target.position) <= Mathf.Abs(Mathf.Pow(projectileData.speed, 2)))
+            {
+                HitTarget();
+                return;
+            }
         }
-        transform.Translate(dir.normalized * projectileData.speed, Space.World);
+        transform.Translate(dir.normalized * (projectileData.speed), Space.World);
         dir.Normalize();
         float rot_z = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
         transform.rotation = Quaternion.Euler(0f, 0f, rot_z - 90);
@@ -114,7 +117,7 @@ public class Projectile : MonoBehaviour
         Collider2D[] colliders = Physics2D.OverlapCircleAll(transform.position, projectileData.explosionRadius);
         foreach (Collider2D collider in colliders)
         {
-            if (collider.tag == OpponentTag)
+            if (collider.tag == OpponentTag || collider.tag == "CoreEntity")
             {
                 CreateDamage(collider.GetComponent<Entity>());
             }

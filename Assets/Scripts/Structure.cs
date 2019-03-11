@@ -8,6 +8,8 @@ public class Structure : AttackEntity
     private bool mouseUpSelect = false;
     private bool uiDelay = false;
     private int uiDelayCounter = 0;
+    public bool PlayerOwned { get; set; } = true;
+    public const float StructureHealthDamageScoreMultiplier = 1000f;
 
     protected LineRenderer rangeLine;
 
@@ -20,7 +22,7 @@ public class Structure : AttackEntity
     {
         base.Start();
         unit.InitStructure();
-        rangeLine = rangeIndicator.DrawCircle(unit.range / BuildManager.instance.GetTurretToBuild().scale, 0.1f, rangeMaterial);
+        rangeLine = rangeIndicator.DrawCircle(unit.range / transform.localScale.x, 0.1f, rangeMaterial);
         rangeLine.enabled = false;
         optionCanvasPrefab.SetActive(false);
     }
@@ -73,10 +75,39 @@ public class Structure : AttackEntity
         }
     }
 
+    public override void TakeDamage(float amount)
+    {
+        float startHealthFrac = unit.Health / unit.maxHealth;
+        unit.Health -= amount;
+        float endHealthFrac = unit.Health / unit.maxHealth;
+        unit.healthBar.fillAmount = (unit.Health / unit.maxHealth);
+        if (PlayerOwned)
+        {
+            StatManager.OpponentScore += Mathf.FloorToInt((startHealthFrac - endHealthFrac) * StructureHealthDamageScoreMultiplier);
+        }
+        else
+        {
+            StatManager.Score += Mathf.FloorToInt((startHealthFrac - endHealthFrac) * StructureHealthDamageScoreMultiplier);
+        }
+        if (unit.Health <= 0f)
+        {
+            Kill();
+        }
+
+    }
+
     public override void Kill()
     {
-        StatManager.Gold += unit.baseValue;
-        StatManager.DefenseUnit -= unit.defenseUnit;
+        if (PlayerOwned)
+        {
+            StatManager.OpponentGold += unit.baseValue;
+            StatManager.DefenseUnit -= unit.defenseUnit;
+        } else
+        {
+            StatManager.Gold += unit.baseValue;
+            StatManager.OpponentDefenseUnit -= unit.defenseUnit;
+        }
+        
         Destroy(gameObject);
     }
 }

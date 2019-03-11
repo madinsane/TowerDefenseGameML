@@ -37,7 +37,7 @@ public class Entity : MonoBehaviour
         
     }
 
-    public void TakeDamage(float amount)
+    public virtual void TakeDamage(float amount)
     {
         unit.Health -= amount;
         unit.healthBar.fillAmount = (unit.Health / unit.maxHealth);

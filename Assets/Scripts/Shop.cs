@@ -178,6 +178,23 @@ public class Shop : MonoBehaviour
         } else
         {
             Debug.Log("Insufficient Gold");
+            buildManager.shopText.text = "Insufficient Gold";
+        }
+    }
+
+    public int RepairStructureOpp(Entity structure)
+    {
+        int cost = GetStructureRepairCost(structure.unit);
+        if (StatManager.OpponentGold >= cost)
+        {
+            structure.unit.InitHealth();
+            StatManager.OpponentGold -= cost;
+            StatManager.OpponentScore += cost;
+            return 0;
+        }
+        else
+        {
+            return 1;
         }
     }
 
@@ -187,6 +204,7 @@ public class Shop : MonoBehaviour
         if (cost == -2)
         {
             Debug.Log("Status Affected");
+            buildManager.shopText.text = "Status Affected";
             return;
         }
         if (StatManager.Gold >= cost)
@@ -199,18 +217,54 @@ public class Shop : MonoBehaviour
             } else
             {
                 Debug.Log("Already at max level");
+                buildManager.shopText.text = "Already at max level";
             }
         }
         else
         {
             Debug.Log("Insufficient Gold");
+            buildManager.shopText.text = "Insufficient Gold";
+        }
+    }
+
+    public int UpgradeStructureOpp(Entity structure)
+    {
+        int cost = GetStructureUpgradeCost(structure.unit);
+        if (cost == -2)
+        {
+            return 1;
+        }
+        if (StatManager.OpponentGold >= cost)
+        {
+            if (structure.unit.UpgradeLevel < 5)
+            {
+                structure.unit.UpgradeStructure();
+                StatManager.OpponentGold -= cost;
+                StatManager.OpponentScore += cost;
+                return 0;
+            }
+            else
+            {
+                return 2;
+            }
+        }
+        else
+        {
+            return 3;
         }
     }
 
     public void SellStructure(Entity structure)
     {
-        int cost = GetStructureRepairCost(structure.unit);
+        int cost = GetStructureSellAmount(structure.unit);
         StatManager.Gold += cost;
+        structure.Kill();
+    }
+
+    public void SellStructureOpp(Entity structure)
+    {
+        int cost = GetStructureSellAmount(structure.unit);
+        StatManager.OpponentGold += cost;
         structure.Kill();
     }
 

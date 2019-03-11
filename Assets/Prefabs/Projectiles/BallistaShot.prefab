@@ -96,7 +96,7 @@ MonoBehaviour:
     damage: 25
     speed: 0.15
     homing: 0
-    explosionRadius: 0.1
+    explosionRadius: 0.5
     impactEffect: {fileID: 7687255503685256080, guid: eaeacef6228f9584c972df12485a77ce,
       type: 3}
     damageType: 0
@@ -106,4 +106,4 @@ MonoBehaviour:
     isPureStatus: 0
     isPureDOT: 0
     isPiercing: 1
-    lifeTime: 2.5
+    lifeTime: 1.25
