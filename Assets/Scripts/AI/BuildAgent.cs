@@ -134,109 +134,109 @@ public class BuildAgent : Agent
 
     public override void CollectObservations()
     {
-        AddVectorObs(StatManager.OpponentGold);
+        //AddVectorObs(StatManager.OpponentGold);
         AddVectorObs(StatManager.OpponentFood);
-        AddVectorObs(StatManager.OpponentDefenseUnit);
-        AddVectorObs(StatManager.DefenseUnitMax);
+        //AddVectorObs(StatManager.OpponentDefenseUnit);
+        //AddVectorObs(StatManager.DefenseUnitMax);
         AddVectorObs(StatManager.Score);
         AddVectorObs(StatManager.OpponentScore);
-        foreach (bool build in canBuild)
-        {
-            AddVectorObs(build);
-        }
+        //foreach (bool build in canBuild)
+        //{
+        //    AddVectorObs(build);
+        //}
     }
 
     public override void AgentAction(float[] vectorAction, string textAction)
     {
         SetReward(CreateReward());
-        Debug.Log("Action: " + textAction);
-        int action = Mathf.FloorToInt(vectorAction[0]);
-        switch (action)
-        {
-            case 0:
-                // do nothing
-                break;
-            case 1:
-                // Molten Top
-                BuildLocation(0, bm.moltenWall);
-                break;
-            case 2:
-                //Molten Bot
-                BuildLocation(1, bm.moltenWall);
-                break;
-            case 3:
-                //Organic Top
-                BuildLocation(0, bm.organicWall);
-                break;
-            case 4:
-                //Organic Bot
-                BuildLocation(1, bm.organicWall);
-                break;
-            case 5:
-                //Mirror Top
-                BuildLocation(0, bm.mirrorWall);
-                break;
-            case 6:
-                //Mirror Bot
-                BuildLocation(1, bm.mirrorWall);
-                break;
-            default:
-                throw new ArgumentException("Invalid action value");
-        }
-        //Build Tower
-        action = Mathf.FloorToInt(vectorAction[1]);
-        StructureShopData structure;
-        int offset;
-        if (action != 0)
-        {
-            if (action <= 18)
-            {
-                structure = bm.ballista;
-                offset = -2;
-            }
-            else if (action <= 36)
-            {
-                structure = bm.flameblast;
-                offset = 16;
-            }
-            else if (action <= 54)
-            {
-                structure = bm.frostbeam;
-                offset = 34;
-            }
-            else
-            {
-                structure = bm.plague;
-                offset = 52;
-            }
-            BuildLocation(action - offset, structure);
-        }
-        //Build AA
-        action = Mathf.FloorToInt(vectorAction[2]);
-        if (action != 0)
-        {
-            BuildLocation(2, bm.lightningSpire);
-        }
-        //Upgrade 
-        action = Mathf.FloorToInt(vectorAction[3]);
-        if (action != 0)
-        {
-            UpgradeLocation(action - 1);
-        }
-        //Sell
-        action = Mathf.FloorToInt(vectorAction[4]);
-        if (action != 0)
-        {
-            SellLocation(action - 1);
-        }
-        //Repair
-        action = Mathf.FloorToInt(vectorAction[5]);
-        if (action != 0)
-        {
-            RepairLocation(action - 1);
-        }
+        //Debug.Log("Action: " + textAction);
+        //int action = Mathf.FloorToInt(vectorAction[0]);
+        //switch (action)
+        //{
+        //    case 0:
+        //        // do nothing
+        //        break;
+        //    case 1:
+        //        // Molten Top
+        //        BuildLocation(0, bm.moltenWall);
+        //        break;
+        //    case 2:
+        //        //Molten Bot
+        //        BuildLocation(1, bm.moltenWall);
+        //        break;
+        //    case 3:
+        //        //Organic Top
+        //        BuildLocation(0, bm.organicWall);
+        //        break;
+        //    case 4:
+        //        //Organic Bot
+        //        BuildLocation(1, bm.organicWall);
+        //        break;
+        //    case 5:
+        //        //Mirror Top
+        //        BuildLocation(0, bm.mirrorWall);
+        //        break;
+        //    case 6:
+        //        //Mirror Bot
+        //        BuildLocation(1, bm.mirrorWall);
+        //        break;
+        //    default:
+        //        throw new ArgumentException("Invalid action value");
+        //}
+        ////Build Tower
+        //action = Mathf.FloorToInt(vectorAction[1]);
+        //StructureShopData structure;
+        //int offset;
+        //if (action != 0)
+        //{
+        //    if (action <= 18)
+        //    {
+        //        structure = bm.ballista;
+        //        offset = -2;
+        //    }
+        //    else if (action <= 36)
+        //    {
+        //        structure = bm.flameblast;
+        //        offset = 16;
+        //    }
+        //    else if (action <= 54)
+        //    {
+        //        structure = bm.frostbeam;
+        //        offset = 34;
+        //    }
+        //    else
+        //    {
+        //        structure = bm.plague;
+        //        offset = 52;
+        //    }
+        //    BuildLocation(action - offset, structure);
+        //}
+        ////Build AA
+        //action = Mathf.FloorToInt(vectorAction[2]);
+        //if (action != 0)
+        //{
+        //    BuildLocation(2, bm.lightningSpire);
+        //}
+        ////Upgrade 
+        //action = Mathf.FloorToInt(vectorAction[3]);
+        //if (action != 0)
+        //{
+        //    UpgradeLocation(action - 1);
+        //}
+        ////Sell
+        //action = Mathf.FloorToInt(vectorAction[4]);
+        //if (action != 0)
+        //{
+        //    SellLocation(action - 1);
+        //}
+        ////Repair
+        //action = Mathf.FloorToInt(vectorAction[5]);
+        //if (action != 0)
+        //{
+        //    RepairLocation(action - 1);
+        //}
         //Summon
-        action = Mathf.FloorToInt(vectorAction[0]);
+        int action = Mathf.FloorToInt(vectorAction[0]);
         switch (action)
         {
             case 0:

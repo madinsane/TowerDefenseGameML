@@ -13,18 +13,12 @@ MonoBehaviour:
   m_Name: BuildLearningBrain
   m_EditorClassIdentifier: 
   brainParameters:
-    vectorObservationSize: 27
+    vectorObservationSize: 3
     numStackedVectorObservations: 1
-    vectorActionSize: 06000000480000000100000015000000150000001500000006000000
+    vectorActionSize: 06000000
     cameraResolutions: []
     vectorActionDescriptions:
     - BuildWall
-    - BuildTower
-    - BuildAA
-    - Upgrade
-    - Sell
-    - Repair
-    - Summon
     vectorActionSpaceType: 0
-  model: {fileID: 11400000, guid: 0df0108337551844999b21c55841658e, type: 3}
+  model: {fileID: 11400000, guid: 8c3deabd85c80a14cb357506b0c551c0, type: 3}
   inferenceDevice: 0

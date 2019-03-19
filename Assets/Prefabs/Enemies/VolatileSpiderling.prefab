@@ -176,7 +176,7 @@ MonoBehaviour:
     range: 1.75
     attackRate: 60
     isSuicide: 1
-    areaOfEffect: 2.75
+    areaOfEffect: 1.25
     damageType: 0
     damageSource: 0
     critChance: 0
